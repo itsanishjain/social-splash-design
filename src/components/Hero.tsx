@@ -1,3 +1,4 @@
+
 import React from "react";
 import { Button } from "@/components/ui/button";
 import { motion } from "framer-motion";
@@ -23,8 +24,9 @@ const Hero = () => {
           scale: { duration: 3, repeat: Infinity, ease: "easeInOut" },
         }}
       >
+        {/* Replace this with a direct image URL for a sakura flower */}
         <img
-          src="https://api.dicebear.com/7.x/icons/svg?icon=sakura"
+          src="https://i.imgur.com/8zC1PSY.png"
           className="w-full h-full"
           alt="Sakura flower decoration"
         />
@@ -41,8 +43,9 @@ const Hero = () => {
           ease: "easeInOut",
         }}
       >
+        {/* Replace this with a direct image URL for sushi */}
         <img
-          src="https://api.dicebear.com/7.x/icons/svg?icon=sushi"
+          src="https://i.imgur.com/JKtV4YD.png" 
           className="w-full h-full"
           alt="Sushi decoration"
         />
