@@ -1,4 +1,3 @@
-
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 import { Search as SearchIcon, TrendingUp, Users, BookOpen, Newspaper, X, Filter } from 'lucide-react';
@@ -69,21 +68,18 @@ const Search = () => {
               <Input 
                 type="text" 
                 placeholder="Search for manga, users, or topics..." 
-                className="pl-10 pr-16 border-2 border-black rounded-full h-10 bg-white text-sm font-['Comic_Neue']"
+                className="pl-10 pr-10 border-2 border-black rounded-full h-10 bg-white text-sm font-['Comic_Neue']"
                 value={searchTerm}
                 onChange={(e) => setSearchTerm(e.target.value)}
               />
               {searchTerm && (
                 <button 
-                  className="absolute right-14 top-2.5"
+                  className="absolute right-3 top-2.5"
                   onClick={handleClearSearch}
                 >
                   <X size={18} className="text-gray-500" />
                 </button>
               )}
-              <Button className="absolute right-2 top-1.5 manga-button bg-[#FFD700] hover:bg-[#FFD700] border-black text-black h-7 px-3 text-xs">
-                Search
-              </Button>
             </div>
           </motion.div>
 
