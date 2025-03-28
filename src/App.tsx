@@ -9,6 +9,7 @@ import { ThemeProvider } from "@/contexts/ThemeContext";
 import Index from "./pages/Index";
 import Feed from "./pages/Feed";
 import Profile from "./pages/Profile";
+import ProfileDetail from "./pages/ProfileDetail";
 import Bookmarks from "./pages/Bookmarks";
 import Settings from "./pages/Settings";
 import Notifications from "./pages/Notifications";
@@ -32,6 +33,7 @@ const App = () => (
                 <Route path="/" element={<Index />} />
                 <Route path="/feed" element={<Feed />} />
                 <Route path="/profile" element={<Profile />} />
+                <Route path="/profile/:id" element={<ProfileDetail />} />
                 <Route path="/bookmarks" element={<Bookmarks />} />
                 <Route path="/settings" element={<Settings />} />
                 <Route path="/notifications" element={<Notifications />} />
