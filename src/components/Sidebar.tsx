@@ -47,8 +47,10 @@ const Sidebar: React.FC = () => {
                   <Link to={item.path}>
                     <Button 
                       variant={isActive ? "default" : "ghost"} 
-                      className={`w-full justify-start text-base font-medium manga-button ${
-                        isActive ? 'bg-[#FF3860] text-white border-2 border-black' : ''
+                      className={`w-full justify-start text-base font-medium ${
+                        isActive 
+                          ? 'bg-[#FF3860] text-white border-2 border-black manga-button' 
+                          : 'hover:bg-secondary/80 text-foreground hover:text-foreground'
                       }`}
                     >
                       <item.icon className="mr-4" size={20} />
