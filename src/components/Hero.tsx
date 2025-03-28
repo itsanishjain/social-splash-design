@@ -104,8 +104,8 @@ const Hero = () => {
               asChild
             >
               <Link to="/feed">
-                <Sparkles className="w-5 h-5 mr-2 text-white" />
-                Join Now!
+                <Sparkles className="w-5 h-5 mr-2 text-black hover:text-white" />
+                <span className="text-black hover:text-white">Join Now!</span>
               </Link>
             </Button>
             <Button
