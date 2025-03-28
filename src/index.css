@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css2?family=Bangers&family=Comic+Neue:wght@400;700&display=swap');
 
 @tailwind base;
 @tailwind components;
@@ -14,16 +15,16 @@
     --popover: 0 0% 100%;
     --popover-foreground: 240 10% 3.9%;
 
-    --primary: 355 100% 45%;
+    --primary: 196 100% 47%;
     --primary-foreground: 0 0% 100%;
 
-    --secondary: 240 4.8% 95.9%;
+    --secondary: 60 100% 50%; 
     --secondary-foreground: 240 5.9% 10%;
 
     --muted: 240 4.8% 95.9%;
     --muted-foreground: 240 3.8% 46.1%;
 
-    --accent: 340 82% 52%;
+    --accent: 349 89% 60%;
     --accent-foreground: 0 0% 100%;
 
     --destructive: 0 84.2% 60.2%;
@@ -31,7 +32,7 @@
 
     --border: 240 5.9% 90%;
     --input: 240 5.9% 90%;
-    --ring: 355 100% 45%;
+    --ring: 196 100% 47%;
 
     --radius: 0.5rem;
 
@@ -55,7 +56,7 @@
     --popover: 240 10% 3.9%;
     --popover-foreground: 0 0% 98%;
 
-    --primary: 355 100% 45%;
+    --primary: 196 100% 47%;
     --primary-foreground: 0 0% 98%;
 
     --secondary: 240 3.7% 15.9%;
@@ -64,7 +65,7 @@
     --muted: 240 3.7% 15.9%;
     --muted-foreground: 240 5% 64.9%;
 
-    --accent: 340 82% 52%;
+    --accent: 349 89% 60%;
     --accent-foreground: 0 0% 98%;
 
     --destructive: 0 62.8% 30.6%;
@@ -72,7 +73,7 @@
 
     --border: 240 3.7% 15.9%;
     --input: 240 3.7% 15.9%;
-    --ring: 355 100% 45%;
+    --ring: 196 100% 47%;
   }
 }
 
@@ -82,59 +83,30 @@
   }
 
   body {
-    @apply bg-background text-foreground font-sans;
+    @apply bg-background text-foreground;
+    font-family: 'Comic Neue', sans-serif;
   }
 
   h1, h2, h3, h4, h5, h6 {
-    @apply font-serif;
+    font-family: 'Bangers', cursive;
+    letter-spacing: 1px;
   }
 }
 
-.gradient-text {
-  @apply bg-clip-text text-transparent bg-gradient-to-r from-red-600 via-pink-500 to-blue-500 font-serif;
-}
-
-.gradient-bg {
-  @apply bg-gradient-to-r from-red-600 via-pink-500 to-blue-500;
-}
-
-.glass-card {
-  @apply bg-white/90 backdrop-blur-sm border border-white/40 shadow-lg;
-}
-
-.animate-initial {
-  opacity: 0;
-}
-
 /* Comic Book Specific Styles */
-.comic-border {
+.manga-panel {
   position: relative;
-  border: 3px solid black;
-  box-shadow: 5px 5px 0px #000;
-}
-
-.comic-panel {
-  position: relative;
-  border: 3px solid black;
-  box-shadow: 5px 5px 0px #000;
+  border: 4px solid #000;
+  box-shadow: 8px 8px 0px #000;
   background-color: white;
   overflow: hidden;
 }
 
-.comic-panel::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  height: 4px;
-  background: repeating-linear-gradient(
-    90deg,
-    #ff9999,
-    #ff9999 10px,
-    #ffcc99 10px,
-    #ffcc99 20px
-  );
+.manga-panel-small {
+  position: relative;
+  border: 3px solid #000;
+  box-shadow: 5px 5px 0px #000;
+  background-color: white;
 }
 
 .speech-bubble {
@@ -161,19 +133,7 @@
   filter: drop-shadow(0 3px 0 rgba(0,0,0,0.5));
 }
 
-.manga-gradient {
-  background: linear-gradient(90deg, #ea384c 0%, #de3163 100%);
-}
-
-.action-text {
-  font-family: 'Comic Sans MS', cursive, sans-serif;
-  font-weight: bold;
-  color: #ea384c;
-  text-shadow: 2px 2px 0px rgba(0,0,0,0.3);
-  transform: rotate(-5deg);
-}
-
-.manga-btn {
+.manga-button {
   position: relative;
   padding: 0.75rem 1.5rem;
   border: 3px solid black;
@@ -182,79 +142,114 @@
   font-weight: bold;
   text-transform: uppercase;
   transition: all 0.2s;
+  font-family: 'Bangers', cursive;
+  letter-spacing: 1px;
 }
 
-.manga-btn:hover {
+.manga-button:hover {
   transform: translate(2px, 2px);
   box-shadow: 2px 2px 0px black;
 }
 
-.manga-btn:active {
+.manga-button:active {
   transform: translate(4px, 4px);
   box-shadow: 0px 0px 0px black;
 }
 
 .starburst {
   position: absolute;
-  background: #FDD835;
+  background: #FFD700;
   color: black;
   font-weight: bold;
-  padding: 10px;
+  padding: 15px;
   border: 3px solid black;
-  box-shadow: 3px 3px 0 rgba(0,0,0,0.5);
   transform: rotate(15deg);
+  font-family: 'Bangers', cursive;
   z-index: 10;
+}
+
+.action-text {
+  font-family: 'Bangers', cursive;
+  color: #FF3860;
+  text-shadow: 2px 2px 0px #000;
+  transform: rotate(-5deg);
+  display: inline-block;
+}
+
+.sound-effect {
+  font-family: 'Bangers', cursive;
+  font-weight: bold;
+  font-size: 1.5em;
+  text-transform: uppercase;
+  color: #FF3860;
+  text-shadow: 
+    2px 2px 0 #fff,
+    4px 4px 0 #000;
+  transform: rotate(-5deg) skew(-5deg);
+  display: inline-block;
+}
+
+.comic-border {
+  position: relative;
+  border: 3px solid black;
+  box-shadow: 5px 5px 0px #000;
+}
+
+.speed-lines {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-image: linear-gradient(90deg, 
+    transparent 0%, 
+    transparent 45%, 
+    rgba(255,255,255,0.5) 45.1%, 
+    transparent 45.2%,
+    transparent 49.9%, 
+    rgba(255,255,255,0.5) 50%, 
+    transparent 50.1%,
+    transparent 54.9%, 
+    rgba(255,255,255,0.5) 55%, 
+    transparent 55.1%,
+    transparent 89.9%, 
+    rgba(255,255,255,0.5) 90%, 
+    transparent 90.1%);
+  opacity: 0.3;
+}
+
+.dot-pattern {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-image: radial-gradient(
+    circle,
+    rgba(0,0,0,0.2) 1px,
+    transparent 1px
+  );
+  background-size: 10px 10px;
+  opacity: 0.3;
 }
 
 /* Additional Typography Classes */
 .heading-xl {
-  @apply font-serif text-4xl md:text-5xl lg:text-6xl font-bold leading-tight tracking-tight;
+  @apply text-4xl md:text-5xl lg:text-6xl font-bold leading-tight tracking-tight;
 }
 
 .heading-lg {
-  @apply font-serif text-3xl md:text-4xl font-bold;
+  @apply text-3xl md:text-4xl font-bold;
 }
 
 .heading-md {
-  @apply font-serif text-2xl md:text-3xl font-bold;
+  @apply text-2xl md:text-3xl font-bold;
 }
 
 .body-lg {
-  @apply font-sans text-lg md:text-xl;
+  @apply text-lg md:text-xl;
 }
 
 .body-md {
-  @apply font-sans text-base;
+  @apply text-base;
 }
 
 .body-sm {
-  @apply font-sans text-sm;
-}
-
-/* Manga Speech Dots */
-.speech-dots {
-  position: relative;
-}
-
-.speech-dots::after {
-  content: '...';
-  position: absolute;
-  font-size: 2rem;
-  line-height: 1;
-  bottom: -0.5rem;
-  right: -1rem;
-  font-weight: bold;
-}
-
-/* Sound Effect Text */
-.sound-effect {
-  font-family: 'Impact', sans-serif;
-  font-weight: bold;
-  text-transform: uppercase;
-  letter-spacing: 2px;
-  transform: rotate(-5deg) skew(-5deg);
-  color: #ea384c;
-  text-shadow: 
-    3px 3px 0 #fff,
-    6px 6px 0 #000;
+  @apply text-sm;
 }
