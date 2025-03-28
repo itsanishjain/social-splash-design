@@ -74,7 +74,7 @@ const CTA = () => {
             animate={{ y: 0, opacity: 1 }}
             transition={{ delay: 0.2, duration: 0.5 }}
           >
-            <h2 className={`heading-lg mb-6 ${
+            <h2 className={`text-3xl md:text-4xl font-bold mb-6 ${
               darkMode ? "text-white" : "text-[#1A1A1A]"
             } font-manga-title tracking-wide`}>
               Ready to Join the{" "}
@@ -104,7 +104,7 @@ const CTA = () => {
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6 text-center">
               <div className={`manga-panel-small p-4 ${
                 darkMode ? "bg-gray-700" : "bg-[#F8F8F8]"
-              }`}>
+              } rounded-lg`}>
                 <div className="w-14 h-14 mx-auto mb-3 bg-[#FFE66D] rounded-full flex items-center justify-center border-2 border-black">
                   <Star className="h-8 w-8" />
                 </div>
@@ -112,7 +112,7 @@ const CTA = () => {
                   Premium Manga
                 </h3>
                 <p className={`text-sm font-manga-body ${
-                  darkMode ? "text-gray-300" : ""
+                  darkMode ? "text-gray-300" : "text-gray-600"
                 }`}>
                   Access exclusive manga content not available anywhere else!
                 </p>
@@ -120,7 +120,7 @@ const CTA = () => {
 
               <div className={`manga-panel-small p-4 ${
                 darkMode ? "bg-gray-700" : "bg-[#F8F8F8]"
-              }`}>
+              } rounded-lg`}>
                 <div className="w-14 h-14 mx-auto mb-3 bg-[#FF4F79] rounded-full flex items-center justify-center border-2 border-black">
                   <Sparkles className="h-8 w-8 text-white" />
                 </div>
@@ -128,7 +128,7 @@ const CTA = () => {
                   Artist Community
                 </h3>
                 <p className={`text-sm font-manga-body ${
-                  darkMode ? "text-gray-300" : ""
+                  darkMode ? "text-gray-300" : "text-gray-600"
                 }`}>
                   Connect with fellow artists and showcase your manga creations!
                 </p>
@@ -136,7 +136,7 @@ const CTA = () => {
 
               <div className={`manga-panel-small p-4 ${
                 darkMode ? "bg-gray-700" : "bg-[#F8F8F8]"
-              }`}>
+              } rounded-lg`}>
                 <div className="w-14 h-14 mx-auto mb-3 bg-[#4FC4FF] rounded-full flex items-center justify-center border-2 border-black">
                   <Zap className="h-8 w-8 text-white" />
                 </div>
@@ -144,7 +144,7 @@ const CTA = () => {
                   Live Events
                 </h3>
                 <p className={`text-sm font-manga-body ${
-                  darkMode ? "text-gray-300" : ""
+                  darkMode ? "text-gray-300" : "text-gray-600"
                 }`}>
                   Participate in manga discussions, contests, and special
                   events!
@@ -203,9 +203,9 @@ const CTA = () => {
             animate={{ opacity: 1 }}
             transition={{ delay: 0.8, duration: 0.5 }}
           >
-            <p className={`body-sm italic font-manga-body ${
-              darkMode ? "text-gray-400" : ""
-            }`}>
+            <p className={`text-sm italic ${
+              darkMode ? "text-gray-400" : "text-gray-500"
+            } font-manga-body`}>
               Try for free - no credit card required
             </p>
           </motion.div>
