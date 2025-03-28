@@ -24,14 +24,17 @@ const testimonials = [
 
 const Testimonials = () => {
   return (
-    <section id="testimonials" className="py-24 bg-primary/5 relative overflow-hidden">
+    <section id="testimonials" className="py-32 relative overflow-hidden">
+      {/* Curved top edge */}
+      <div className="absolute top-0 left-0 right-0 h-20 bg-purple-500/5 curved-section"></div>
+      
       {/* Background Elements */}
-      <div className="absolute -right-24 bottom-0 w-96 h-96 rounded-full bg-violet-500/10 blur-3xl"></div>
-      <div className="absolute -left-24 top-0 w-96 h-96 rounded-full bg-blue-500/10 blur-3xl"></div>
+      <div className="shape circle bg-purple-500/10 w-96 h-96 bottom-20 right-20 blur-3xl"></div>
+      <div className="shape circle bg-indigo-500/10 w-96 h-96 top-20 left-20 blur-3xl"></div>
       
       <div className="container relative z-10">
-        <div className="text-center mb-16 max-w-2xl mx-auto">
-          <h2 className="heading-lg mb-4 gradient-text">
+        <div className="text-center mb-20 max-w-2xl mx-auto">
+          <h2 className="heading-lg mb-6 gradient-text">
             Loved by Our Community
           </h2>
           <p className="body-lg text-muted-foreground">
@@ -39,19 +42,22 @@ const Testimonials = () => {
           </p>
         </div>
         
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <div className="flex flex-col md:flex-row gap-8 overflow-x-auto pb-8 snap-x">
           {testimonials.map((testimonial, index) => (
             <div 
               key={index} 
-              className="glass-card p-6 rounded-xl flex flex-col h-full hover:scale-[1.02] transition-all duration-300"
+              className="neo-card p-8 md:min-w-[350px] w-full md:w-1/3 flex flex-col h-full transition-all duration-500 snap-start hover:translate-y-[-8px]"
             >
+              {/* Quote mark */}
+              <div className="text-5xl font-serif text-primary/20 leading-none mb-4">"</div>
+              
               <div className="flex-1">
-                <p className="body-md mb-6 italic text-muted-foreground">"{testimonial.quote}"</p>
+                <p className="body-md mb-8 text-muted-foreground">{testimonial.quote}</p>
               </div>
               
-              <div className="flex items-center gap-4 pt-4 border-t border-primary/10">
+              <div className="flex items-center gap-4 pt-4 border-t border-white/10">
                 <div 
-                  className="w-12 h-12 rounded-full bg-cover bg-center"
+                  className="w-14 h-14 rounded-full bg-cover bg-center gradient-border"
                   style={{ backgroundImage: `url(${testimonial.image})` }}
                 ></div>
                 <div>

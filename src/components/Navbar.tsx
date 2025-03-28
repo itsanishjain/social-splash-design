@@ -7,11 +7,13 @@ const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = React.useState(false);
 
   return (
-    <header className="sticky top-0 z-50 w-full bg-background/80 backdrop-blur-sm border-b">
-      <div className="container flex h-16 items-center justify-between">
+    <header className="fixed top-0 z-50 w-full">
+      <div className="container flex h-20 items-center justify-between">
         <div className="flex items-center gap-2">
-          <div className="h-8 w-8 rounded-full gradient-bg"></div>
-          <span className="text-xl font-bold">Connectify</span>
+          <div className="h-10 w-10 rounded-full gradient-bg glow"></div>
+          <span className="text-2xl font-serif font-bold gradient-text">
+            Connectify
+          </span>
         </div>
         
         {/* Desktop Navigation */}
@@ -25,10 +27,10 @@ const Navbar = () => {
           <a href="#pricing" className="text-sm font-medium transition-colors hover:text-primary">
             Pricing
           </a>
-          <Button variant="outline" className="rounded-full">
+          <Button variant="outline" className="rounded-full border-white/20 hover:bg-white/10 hover:text-white">
             Log in
           </Button>
-          <Button className="rounded-full">Sign up for free</Button>
+          <Button className="rounded-full gradient-bg hover:opacity-90">Sign up for free</Button>
         </nav>
         
         {/* Mobile Menu Button */}
@@ -42,7 +44,7 @@ const Navbar = () => {
       
       {/* Mobile Navigation */}
       {isMenuOpen && (
-        <div className="md:hidden container py-4 pb-6 animate-fade-in">
+        <div className="md:hidden container py-4 pb-6 animate-fade-in glass-card mt-2">
           <nav className="flex flex-col gap-4">
             <a 
               href="#features" 
@@ -66,10 +68,10 @@ const Navbar = () => {
               Pricing
             </a>
             <div className="flex flex-col gap-2 mt-2">
-              <Button variant="outline" className="rounded-full w-full justify-center">
+              <Button variant="outline" className="rounded-full border-white/20 hover:bg-white/10 hover:text-white w-full justify-center">
                 Log in
               </Button>
-              <Button className="rounded-full w-full justify-center">
+              <Button className="rounded-full gradient-bg hover:opacity-90 w-full justify-center">
                 Sign up for free
               </Button>
             </div>
