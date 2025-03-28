@@ -68,7 +68,7 @@ const Hero = () => {
               スーパー!
             </motion.div>
 
-            <h1 className="heading-xl mb-6 text-[#1A1A1A] font-bold font-['Bangers'] tracking-wide">
+            <h1 className="heading-xl mb-6 text-[#1A1A1A] font-bold font-manga-title tracking-wide">
               <span className="text-[#FF4F79]">Manga</span>Splash
               <motion.span
                 className="sound-effect ml-2 text-[#FF4F79]"
@@ -80,13 +80,13 @@ const Hero = () => {
             </h1>
 
             <div className="manga-panel p-6 bg-white border-[4px] border-black">
-              <p className="body-lg text-[#333] font-bold">
+              <p className="body-lg text-[#333] font-manga-body">
                 Connect with fellow manga fans! Share art, discuss storylines,
                 and make friends who love the same series!
               </p>
               <div className="mt-4 flex items-center gap-2">
                 <Heart className="text-[#FF4F79] fill-[#FF4F79]" />
-                <span className="font-['Bangers'] tracking-wide text-lg">
+                <span className="font-manga-accent tracking-wide text-lg">
                   漫画の魂 - The Spirit of Manga!
                 </span>
               </div>
@@ -100,17 +100,17 @@ const Hero = () => {
             transition={{ delay: 0.4, duration: 0.5 }}
           >
             <Button
-              className="manga-button bg-[#FF4F79] hover:bg-[#FF4F79] text-white border-black text-lg h-14"
+              className="manga-button bg-[#FF4F79] hover:bg-[#FF4F79] text-white border-black text-lg h-14 font-manga-accent"
               asChild
             >
               <Link to="/feed">
-                <Sparkles className="w-5 h-5 mr-2 text-black hover:text-white" />
-                <span className="text-black hover:text-white">Join Now!</span>
+                <Sparkles className="w-5 h-5 mr-2 text-white" />
+                Join Now!
               </Link>
             </Button>
             <Button
               variant="outline"
-              className="manga-button bg-[#FFE66D] hover:bg-[#FFE66D] text-black border-black text-lg h-14"
+              className="manga-button bg-[#FFE66D] hover:bg-[#FFE66D] text-black border-black text-lg h-14 font-manga-accent"
             >
               <Zap className="w-5 h-5 mr-2 text-black" />
               Watch Demo
@@ -175,7 +175,9 @@ const Hero = () => {
                 />
               </div>
               <div>
-                <p className="font-bold text-lg font-['Bangers']">SakuraChan</p>
+                <p className="font-bold text-lg font-manga-accent">
+                  SakuraChan
+                </p>
                 <div className="flex items-center">
                   <span className="text-xs text-[#555] bg-[#F0F0F0] px-2 py-1 rounded-full">
                     Tokyo, Japan
@@ -264,7 +266,7 @@ const Hero = () => {
             animate={{ scale: [0, 1.2, 1] }}
             transition={{ delay: 1, duration: 0.5 }}
           >
-            <div className="sound-effect whitespace-nowrap text-2xl">
+            <div className="sound-effect whitespace-nowrap text-2xl font-manga-title">
               スゴイ!
             </div>
           </motion.div>
@@ -277,7 +279,7 @@ const Hero = () => {
             transition={{ delay: 0.8, duration: 0.4 }}
             whileHover={{ rotate: 0 }}
           >
-            <p className="text-sm text-center font-['Bangers']">
+            <p className="text-sm text-center font-manga-accent">
               NEW POSTS DAILY!
             </p>
           </motion.div>
@@ -289,7 +291,7 @@ const Hero = () => {
             transition={{ delay: 1, duration: 0.4 }}
             whileHover={{ rotate: 0 }}
           >
-            <p className="text-xs text-center font-['Bangers']">TRENDING!</p>
+            <p className="text-xs text-center font-manga-accent">TRENDING!</p>
           </motion.div>
         </motion.div>
       </div>

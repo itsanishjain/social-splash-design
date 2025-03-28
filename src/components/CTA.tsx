@@ -12,7 +12,7 @@ const CTA = () => {
     >
       {/* Manga style decorative elements */}
       <motion.div
-        className="absolute top-10 right-10 starburst bg-[#FF4F79] text-white border-black z-10"
+        className="absolute top-10 right-10 starburst bg-[#FF4F79] text-white border-black z-10 font-manga-accent"
         initial={{ scale: 0, rotate: 0 }}
         animate={{ scale: 1, rotate: 15 }}
         transition={{ duration: 0.5, delay: 0.3 }}
@@ -50,7 +50,7 @@ const CTA = () => {
           animate={{ scale: 1, opacity: 1 }}
           transition={{ duration: 0.5 }}
         >
-          <div className="absolute -top-5 -left-5 manga-panel-small p-3 bg-[#FFE66D] rotate-[-8deg] border-black font-['Bangers'] text-lg">
+          <div className="absolute -top-5 -left-5 manga-panel-small p-3 bg-[#FFE66D] rotate-[-8deg] border-black font-manga-accent text-lg">
             JOIN NOW!
           </div>
 
@@ -59,7 +59,7 @@ const CTA = () => {
             animate={{ y: 0, opacity: 1 }}
             transition={{ delay: 0.2, duration: 0.5 }}
           >
-            <h2 className="heading-lg mb-6 text-[#1A1A1A] font-['Bangers'] tracking-wide">
+            <h2 className="heading-lg mb-6 text-[#1A1A1A] font-manga-title tracking-wide">
               Ready to Join the{" "}
               <motion.span
                 className="sound-effect inline-block text-[#FF4F79]"
@@ -89,10 +89,10 @@ const CTA = () => {
                 <div className="w-14 h-14 mx-auto mb-3 bg-[#FFE66D] rounded-full flex items-center justify-center border-2 border-black">
                   <Star className="h-8 w-8" />
                 </div>
-                <h3 className="font-['Bangers'] tracking-wide text-lg mb-2">
+                <h3 className="font-manga-accent tracking-wide text-lg mb-2">
                   Premium Manga
                 </h3>
-                <p className="text-sm">
+                <p className="text-sm font-manga-body">
                   Access exclusive manga content not available anywhere else!
                 </p>
               </div>
@@ -101,10 +101,10 @@ const CTA = () => {
                 <div className="w-14 h-14 mx-auto mb-3 bg-[#FF4F79] rounded-full flex items-center justify-center border-2 border-black">
                   <Sparkles className="h-8 w-8 text-white" />
                 </div>
-                <h3 className="font-['Bangers'] tracking-wide text-lg mb-2">
+                <h3 className="font-manga-accent tracking-wide text-lg mb-2">
                   Artist Community
                 </h3>
-                <p className="text-sm">
+                <p className="text-sm font-manga-body">
                   Connect with fellow artists and showcase your manga creations!
                 </p>
               </div>
@@ -113,10 +113,10 @@ const CTA = () => {
                 <div className="w-14 h-14 mx-auto mb-3 bg-[#4FC4FF] rounded-full flex items-center justify-center border-2 border-black">
                   <Zap className="h-8 w-8 text-white" />
                 </div>
-                <h3 className="font-['Bangers'] tracking-wide text-lg mb-2">
+                <h3 className="font-manga-accent tracking-wide text-lg mb-2">
                   Live Events
                 </h3>
-                <p className="text-sm">
+                <p className="text-sm font-manga-body">
                   Participate in manga discussions, contests, and special
                   events!
                 </p>
@@ -132,7 +132,7 @@ const CTA = () => {
               transition={{ delay: 0.7, duration: 0.3 }}
             >
               <div className="speech-bubble p-3">
-                <p className="text-sm font-bold font-['Bangers']">
+                <p className="text-sm font-bold font-manga-accent">
                   Join 50,000+ fans!
                 </p>
               </div>
@@ -145,7 +145,7 @@ const CTA = () => {
               >
                 <Button
                   size="lg"
-                  className="manga-button bg-[#FF4F79] hover:bg-[#FF4F79] text-white border-black text-lg h-14"
+                  className="manga-button bg-[#FF4F79] hover:bg-[#FF4F79] text-white border-black text-lg h-14 font-manga-accent"
                   asChild
                 >
                   <Link to="/feed">
@@ -162,7 +162,7 @@ const CTA = () => {
                 <Button
                   size="lg"
                   variant="outline"
-                  className="manga-button bg-[#FFE66D] hover:bg-[#FFE66D] text-black border-black text-lg h-14"
+                  className="manga-button bg-[#FFE66D] hover:bg-[#FFE66D] text-black border-black text-lg h-14 font-manga-accent"
                 >
                   <ArrowRight className="w-5 h-5 mr-2 text-black" />
                   View Premium Plans
@@ -177,7 +177,7 @@ const CTA = () => {
             animate={{ opacity: 1 }}
             transition={{ delay: 0.8, duration: 0.5 }}
           >
-            <p className="body-sm italic">
+            <p className="body-sm italic font-manga-body">
               Try for free - no credit card required
             </p>
           </motion.div>

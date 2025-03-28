@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Bangers&family=Comic+Neue:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Bangers&family=Comic+Neue:wght@400;700&family=Bungee+Shade&family=Dela+Gothic+One&family=Poppins:wght@400;500;700&family=Zen+Tokyo+Zoo&family=Mochiy+Pop+One&family=Zen+Maru+Gothic:wght@400;700;900&display=swap');
 
 @tailwind base;
 @tailwind components;
@@ -84,22 +84,41 @@
 
   body {
     @apply bg-background text-foreground;
-    font-family: 'Comic Neue', sans-serif;
+    font-family: 'Poppins', 'Comic Neue', sans-serif;
   }
 
   h1, h2, h3, h4, h5, h6 {
-    font-family: 'Bangers', cursive;
+    font-family: 'Dela Gothic One', 'Bangers', cursive;
     letter-spacing: 1px;
   }
 }
 
-/* Comic Book Specific Styles */
+/* Enhanced Manga Panel Styles */
 .manga-panel {
   position: relative;
   border: 4px solid #000;
   box-shadow: 8px 8px 0px #000;
   background-color: white;
   overflow: hidden;
+  transition: all 0.3s ease;
+  transform-origin: center;
+}
+
+.manga-panel:hover {
+  transform: translateY(-5px);
+  box-shadow: 12px 12px 0px #000;
+}
+
+.manga-panel::before {
+  content: '';
+  position: absolute;
+  top: -6px;
+  left: -6px;
+  width: calc(100% + 12px);
+  height: calc(100% + 12px);
+  border: 2px dashed rgba(0, 0, 0, 0.2);
+  pointer-events: none;
+  z-index: -1;
 }
 
 .manga-panel-small {
@@ -107,15 +126,64 @@
   border: 3px solid #000;
   box-shadow: 5px 5px 0px #000;
   background-color: white;
+  transition: all 0.2s ease;
 }
 
+.manga-panel-small:hover {
+  transform: translateY(-2px) translateX(-2px);
+  box-shadow: 7px 7px 0px #000;
+}
+
+/* Add torn paper effect to panels */
+.manga-panel-torn {
+  position: relative;
+  background-color: white;
+  border: 4px solid #000;
+  box-shadow: 8px 8px 0px #000;
+  clip-path: polygon(
+    0% 0%, 
+    100% 0%, 
+    98% 2%, 
+    100% 5%, 
+    98% 10%, 
+    100% 15%, 
+    99% 20%, 
+    100% 100%, 
+    95% 98%, 
+    90% 100%, 
+    85% 98%, 
+    80% 100%, 
+    75% 98%, 
+    70% 100%, 
+    65% 99%, 
+    60% 100%, 
+    55% 99%, 
+    50% 100%, 
+    45% 99%, 
+    40% 100%, 
+    35% 99%, 
+    30% 100%, 
+    20% 98%, 
+    10% 100%, 
+    5% 98%, 
+    0% 100%
+  );
+  padding: 20px;
+}
+
+/* Enhanced speech bubble */
 .speech-bubble {
   position: relative;
   background: white;
   border: 3px solid black;
   border-radius: 30px;
   padding: 20px;
-  filter: drop-shadow(3px 3px 0 rgba(0,0,0,0.5));
+  filter: drop-shadow(4px 4px 0 rgba(0,0,0,0.8));
+  transition: all 0.2s ease;
+}
+
+.speech-bubble:hover {
+  transform: scale(1.02);
 }
 
 .speech-bubble:after {
@@ -130,9 +198,70 @@
   border-bottom: 0;
   margin-left: -20px;
   margin-bottom: -20px;
-  filter: drop-shadow(0 3px 0 rgba(0,0,0,0.5));
+  filter: drop-shadow(2px 4px 0 rgba(0,0,0,0.5));
 }
 
+/* Thought bubble style */
+.thought-bubble {
+  position: relative;
+  background: white;
+  border: 3px solid black;
+  border-radius: 50px;
+  padding: 20px;
+  filter: drop-shadow(3px 3px 0 rgba(0,0,0,0.5));
+}
+
+.thought-bubble:before {
+  content: '';
+  position: absolute;
+  bottom: -20px;
+  right: 40px;
+  width: 30px;
+  height: 30px;
+  background: white;
+  border: 3px solid black;
+  border-radius: 50%;
+}
+
+.thought-bubble:after {
+  content: '';
+  position: absolute;
+  bottom: -35px;
+  right: 25px;
+  width: 15px;
+  height: 15px;
+  background: white;
+  border: 3px solid black;
+  border-radius: 50%;
+}
+
+/* Action panel with dynamic background */
+.action-panel {
+  position: relative;
+  border: 4px solid #000;
+  box-shadow: 8px 8px 0px #000;
+  background-color: white;
+  overflow: hidden;
+  z-index: 1;
+}
+
+.action-panel::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: radial-gradient(
+    circle at center,
+    rgba(255, 216, 0, 0.1) 0%,
+    rgba(255, 79, 121, 0.1) 50%,
+    rgba(79, 196, 255, 0.1) 100%
+  );
+  z-index: -1;
+}
+
+/* Enhanced manga button */
 .manga-button {
   position: relative;
   padding: 0.75rem 1.5rem;
@@ -142,8 +271,29 @@
   font-weight: bold;
   text-transform: uppercase;
   transition: all 0.2s;
-  font-family: 'Bangers', cursive;
+  font-family: 'Mochiy Pop One', cursive;
   letter-spacing: 1px;
+  overflow: hidden;
+}
+
+.manga-button::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255, 255, 255, 0.4),
+    transparent
+  );
+  transition: all 0.5s;
+}
+
+.manga-button:hover::after {
+  left: 100%;
 }
 
 .manga-button:hover {
@@ -477,4 +627,27 @@
   transform: rotate(-5deg) skew(-5deg);
   display: inline-block;
   letter-spacing: 1px;
+}
+
+/* Add Japanese-inspired font utility classes */
+.font-manga-title {
+  font-family: 'Zen Tokyo Zoo', 'Bangers', cursive;
+  letter-spacing: 1px;
+}
+
+.font-manga-heading {
+  font-family: 'Dela Gothic One', 'Bangers', cursive;
+  letter-spacing: 0.5px;
+}
+
+.font-manga-accent {
+  font-family: 'Mochiy Pop One', cursive;
+}
+
+.font-manga-body {
+  font-family: 'Zen Maru Gothic', 'Poppins', sans-serif;
+}
+
+.font-manga-display {
+  font-family: 'Bungee Shade', cursive;
 }
