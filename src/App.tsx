@@ -7,6 +7,12 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { FeedProvider } from "@/contexts/FeedContext";
 import Index from "./pages/Index";
 import Feed from "./pages/Feed";
+import Profile from "./pages/Profile";
+import Bookmarks from "./pages/Bookmarks";
+import Settings from "./pages/Settings";
+import Notifications from "./pages/Notifications";
+import Search from "./pages/Search";
+import Messages from "./pages/Messages";
 import NotFound from "./pages/NotFound";
 import MobileNav from "./components/MobileNav";
 
@@ -22,6 +28,12 @@ const App = () => (
           <Routes>
             <Route path="/" element={<Index />} />
             <Route path="/feed" element={<Feed />} />
+            <Route path="/profile" element={<Profile />} />
+            <Route path="/bookmarks" element={<Bookmarks />} />
+            <Route path="/settings" element={<Settings />} />
+            <Route path="/notifications" element={<Notifications />} />
+            <Route path="/search" element={<Search />} />
+            <Route path="/messages" element={<Messages />} />
             {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
             <Route path="*" element={<NotFound />} />
           </Routes>
