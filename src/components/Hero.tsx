@@ -1,4 +1,3 @@
-
 import React from "react";
 import { Button } from "@/components/ui/button";
 import { motion } from "framer-motion";
@@ -23,14 +22,7 @@ const Hero = () => {
           rotate: { duration: 20, repeat: Infinity, ease: "linear" },
           scale: { duration: 3, repeat: Infinity, ease: "easeInOut" },
         }}
-      >
-        {/* Replace this with a direct image URL for a sakura flower */}
-        <img
-          src="https://i.imgur.com/8zC1PSY.png"
-          className="w-full h-full"
-          alt="Sakura flower decoration"
-        />
-      </motion.div>
+      ></motion.div>
 
       <motion.div
         className="absolute bottom-10 right-10 w-32 h-32"
@@ -42,14 +34,7 @@ const Hero = () => {
           repeat: Infinity,
           ease: "easeInOut",
         }}
-      >
-        {/* Replace this with a direct image URL for sushi */}
-        <img
-          src="https://i.imgur.com/JKtV4YD.png" 
-          className="w-full h-full"
-          alt="Sushi decoration"
-        />
-      </motion.div>
+      ></motion.div>
 
       <div className="container py-20 grid md:grid-cols-2 gap-12 items-center relative z-10">
         {/* Left Column: Content */}
