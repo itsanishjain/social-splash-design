@@ -21,6 +21,25 @@ const CTA = () => {
       <div className="absolute inset-0 dot-pattern opacity-30"></div>
       <div className="absolute bottom-0 left-0 w-full h-40 speed-lines transform rotate-45 opacity-20"></div>
 
+      {/* Join Now Stamp */}
+      <motion.div 
+        className="absolute top-8 left-8 z-20"
+        initial={{ rotate: -15, scale: 0.9 }}
+        animate={{ rotate: [-20, -15, -20], scale: [0.9, 1, 0.9] }}
+        transition={{ duration: 5, repeat: Infinity, ease: "easeInOut" }}
+      >
+        <motion.div 
+          className={`flex items-center justify-center w-28 h-28 rounded-full 
+            ${darkMode ? "bg-[#FF4F79]" : "bg-[#FF4F79]"} 
+            border-[3px] border-dashed border-black transform rotate-12
+            shadow-[4px_4px_0px_#000] dark:shadow-[4px_4px_0px_#111827]`}
+        >
+          <span className="font-manga-accent text-white text-xl tracking-wide transform -rotate-12 font-bold">
+            JOIN NOW!
+          </span>
+        </motion.div>
+      </motion.div>
+
       {/* Decorative anime elements */}
       <motion.div
         className="absolute bottom-10 left-10 w-32 h-32"
@@ -141,19 +160,7 @@ const CTA = () => {
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.6, duration: 0.4 }}
           >
-            <div className="max-w-md mx-auto">
-              <div className="text-center mb-8">
-                <motion.div 
-                  className={`inline-block py-3 px-6 rounded-full ${
-                    darkMode ? "bg-[#8B5CF6]" : "bg-[#FF4F79]"
-                  } text-white font-manga-accent text-lg border-2 border-black shadow-[4px_4px_0px_#000] dark:shadow-[4px_4px_0px_#111827]`}
-                  whileHover={{ y: -3 }}
-                  whileTap={{ y: 0 }}
-                >
-                  JOIN NOW!
-                </motion.div>
-              </div>
-              
+            <div className="max-w-md mx-auto">              
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
                 <motion.div
                   whileHover={{ scale: 1.05 }}
