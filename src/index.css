@@ -82,12 +82,16 @@
   }
 
   body {
-    @apply bg-background text-foreground;
+    @apply bg-background text-foreground font-sans;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-serif;
   }
 }
 
 .gradient-text {
-  @apply bg-clip-text text-transparent bg-gradient-to-r from-violet-500 via-pink-500 to-blue-500;
+  @apply bg-clip-text text-transparent bg-gradient-to-r from-violet-500 via-pink-500 to-blue-500 font-serif;
 }
 
 .gradient-bg {
@@ -100,4 +104,29 @@
 
 .animate-initial {
   opacity: 0;
+}
+
+/* Additional Typography Classes */
+.heading-xl {
+  @apply font-serif text-4xl md:text-5xl lg:text-6xl font-bold leading-tight tracking-tight;
+}
+
+.heading-lg {
+  @apply font-serif text-3xl md:text-4xl font-bold;
+}
+
+.heading-md {
+  @apply font-serif text-2xl md:text-3xl font-bold;
+}
+
+.body-lg {
+  @apply font-sans text-lg md:text-xl;
+}
+
+.body-md {
+  @apply font-sans text-base;
+}
+
+.body-sm {
+  @apply font-sans text-sm;
 }

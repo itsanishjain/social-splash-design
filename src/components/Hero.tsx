@@ -17,10 +17,10 @@ const Hero = () => {
             <span className="inline-block py-2 px-4 bg-primary/10 text-primary rounded-full text-sm font-medium mb-4">
               Connect. Share. Thrive.
             </span>
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight tracking-tight mb-4 gradient-text">
+            <h1 className="heading-xl mb-4 gradient-text">
               Where Connections Become Community
             </h1>
-            <p className="text-lg md:text-xl text-muted-foreground">
+            <p className="body-lg text-muted-foreground">
               Join millions creating meaningful connections on our next-gen social platform. Share moments that matter with people who care.
             </p>
           </div>
