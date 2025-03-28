@@ -17,7 +17,7 @@ const PostCard: React.FC<PostCardProps> = ({ post }) => {
   const { likePost, bookmarkPost } = useFeed();
 
   return (
-    <Card className="overflow-hidden bg-white border-4 border-black rounded-lg shadow-[8px_8px_0px_#000] hover:shadow-[4px_4px_0px_#000] transition-all duration-200 transform hover:translate-x-1 hover:translate-y-1">
+    <Card className="overflow-hidden bg-white border-4 border-black rounded-lg shadow-[8px_8px_0px_#000] hover:shadow-[4px_4px_0px_#000] transition-all duration-200">
       <CardContent className="p-4">
         <div className="flex gap-3">
           <Avatar className="h-12 w-12 ring-4 ring-black">

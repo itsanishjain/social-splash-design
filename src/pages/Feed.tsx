@@ -64,7 +64,7 @@ const Feed: React.FC = () => {
                   initial={{ opacity: 0, y: 20 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ delay: index * 0.05, duration: 0.3 }}
-                  className="mb-4 transform hover:-rotate-1 transition-transform"
+                  className="mb-4"
                 >
                   <PostCard post={post} />
                 </motion.div>
