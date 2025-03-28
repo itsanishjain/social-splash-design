@@ -1,3 +1,4 @@
+
 @import url('https://fonts.googleapis.com/css2?family=Bangers&family=Comic+Neue:wght@400;700&family=Bungee+Shade&family=Dela+Gothic+One&family=Poppins:wght@400;500;700&family=Zen+Tokyo+Zoo&family=Mochiy+Pop+One&family=Zen+Maru+Gothic:wght@400;700;900&display=swap');
 
 @tailwind base;
@@ -137,20 +138,44 @@
   border-color: rgba(255, 255, 255, 0.1);
 }
 
+/* Manga Button Styles */
+.manga-button {
+  position: relative;
+  border: 2px solid #000 !important;
+  border-radius: 0.5rem;
+  background-color: white;
+  color: black;
+  font-weight: bold;
+  box-shadow: 4px 4px 0px #000 !important;
+  transition: all 0.2s ease;
+  transform-origin: center;
+  overflow: hidden;
+}
+
+.manga-button:hover {
+  transform: translate(2px, 2px);
+  box-shadow: 2px 2px 0px #000 !important;
+}
+
+.manga-button:active {
+  transform: translate(4px, 4px);
+  box-shadow: 0px 0px 0px #000 !important;
+}
+
 /* Add dark mode adjustments to existing classes */
 .dark .manga-button {
   background-color: #374151;
-  border-color: #4b5563;
+  border-color: #4b5563 !important;
   color: white;
-  box-shadow: 4px 4px 0px #111827;
+  box-shadow: 4px 4px 0px #111827 !important;
 }
 
 .dark .manga-button:hover {
-  box-shadow: 2px 2px 0px #111827;
+  box-shadow: 2px 2px 0px #111827 !important;
 }
 
 .dark .manga-button:active {
-  box-shadow: 0px 0px 0px #111827;
+  box-shadow: 0px 0px 0px #111827 !important;
 }
 
 .dark .starburst {

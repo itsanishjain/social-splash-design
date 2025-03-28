@@ -7,7 +7,7 @@ import { cn } from "@/lib/utils"
 import { useTheme } from "@/contexts/ThemeContext"
 
 const buttonVariants = cva(
-  "inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0",
+  "inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md text-sm font-medium transition-all focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0 border-2 border-black dark:border-gray-600 shadow-[4px_4px_0px_#000] dark:shadow-[4px_4px_0px_#111827] hover:shadow-[2px_2px_0px_#000] dark:hover:shadow-[2px_2px_0px_#111827] hover:translate-x-1 hover:translate-y-1 active:shadow-none active:translate-x-2 active:translate-y-2",
   {
     variants: {
       variant: {
@@ -18,9 +18,10 @@ const buttonVariants = cva(
           "border border-input bg-background hover:bg-accent hover:text-accent-foreground",
         secondary:
           "bg-secondary text-secondary-foreground hover:bg-secondary/80",
-        ghost: "hover:bg-accent hover:text-accent-foreground",
-        link: "text-primary underline-offset-4 hover:underline",
+        ghost: "hover:bg-accent hover:text-accent-foreground border-0 shadow-none hover:shadow-none",
+        link: "text-primary underline-offset-4 hover:underline border-0 shadow-none hover:shadow-none",
         theme: "text-white",
+        manga: "bg-white text-black hover:bg-white manga-button",
       },
       size: {
         default: "h-10 px-4 py-2",
