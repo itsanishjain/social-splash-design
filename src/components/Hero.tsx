@@ -26,7 +26,7 @@ const Hero = () => {
         <img
           src="https://api.dicebear.com/7.x/icons/svg?icon=sakura"
           className="w-full h-full"
-          alt="sakura"
+          alt="Sakura flower decoration"
         />
       </motion.div>
 
@@ -44,7 +44,7 @@ const Hero = () => {
         <img
           src="https://api.dicebear.com/7.x/icons/svg?icon=sushi"
           className="w-full h-full"
-          alt="sushi"
+          alt="Sushi decoration"
         />
       </motion.div>
 
