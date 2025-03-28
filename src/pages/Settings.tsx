@@ -1,7 +1,6 @@
 
 import React from 'react';
-import { motion } from 'framer-motion';
-import { Moon, Sun, Bell, Shield, User, Palette, Globe, VolumeX, Info } from 'lucide-react';
+import { Bell, Shield, User, Palette, Globe, VolumeX, Info, Sun, Moon } from 'lucide-react';
 import { Label } from "@/components/ui/label";
 import { Input } from "@/components/ui/input";
 import { Switch } from "@/components/ui/switch";
@@ -10,22 +9,22 @@ import { Button } from "@/components/ui/button";
 import { Popover, PopoverContent, PopoverTrigger } from "@/components/ui/popover";
 import Sidebar from '@/components/Sidebar';
 import { Checkbox } from '@/components/ui/checkbox';
+import { useTheme } from '@/contexts/ThemeContext';
 
 const Settings = () => {
+  const { darkMode, toggleDarkMode, themeColor, setThemeColor } = useTheme();
+  
+  const colorOptions = ['#FF3860', '#FFD700', '#00A7E1', '#14B8A6', '#8B5CF6'];
+
   return (
-    <div className="flex min-h-screen bg-[#FFF9EC]">
+    <div className="flex min-h-screen bg-[#FFF9EC] dark:bg-gray-900 transition-colors duration-200">
       <Sidebar />
       <div className="flex-1 pb-16 md:pb-0">
-        <div className="manga-panel w-full p-4 md:p-6 max-w-4xl mx-auto">
-          <motion.div
-            initial={{ y: 20, opacity: 0 }}
-            animate={{ y: 0, opacity: 1 }}
-            transition={{ duration: 0.5 }}
-            className="mb-6"
-          >
-            <h1 className="text-3xl font-['Bangers'] text-black mb-4">Settings</h1>
-            <p className="font-['Comic_Neue'] text-gray-700 text-lg">Customize your MangaVerse experience!</p>
-          </motion.div>
+        <div className="manga-panel w-full p-4 md:p-6 max-w-4xl mx-auto dark:border-gray-700 dark:bg-gray-800">
+          <div className="mb-6">
+            <h1 className="text-3xl font-['Bangers'] text-black dark:text-white mb-4">Settings</h1>
+            <p className="font-['Comic_Neue'] text-gray-700 dark:text-gray-300 text-lg">Customize your MangaVerse experience!</p>
+          </div>
 
           <div className="space-y-10 mt-6">
             {/* Account Section */}
@@ -36,17 +35,17 @@ const Settings = () => {
               <div className="grid gap-6">
                 <div className="grid grid-cols-1 gap-2">
                   <Label htmlFor="username" className="font-['Comic_Neue'] text-base font-bold">Username</Label>
-                  <Input id="username" defaultValue="manga_lover42" className="border-2 border-black" />
+                  <Input id="username" defaultValue="manga_lover42" className="border-2 border-black dark:border-gray-600" />
                 </div>
                 
                 <div className="grid grid-cols-1 gap-2">
                   <Label htmlFor="email" className="font-['Comic_Neue'] text-base font-bold">Email</Label>
-                  <Input id="email" type="email" defaultValue="user@example.com" className="border-2 border-black" />
+                  <Input id="email" type="email" defaultValue="user@example.com" className="border-2 border-black dark:border-gray-600" />
                 </div>
                 
                 <div className="grid grid-cols-1 gap-2">
                   <Label className="font-['Comic_Neue'] text-base font-bold">Password</Label>
-                  <Button variant="outline" className="manga-button bg-white hover:bg-white border-black text-black">
+                  <Button variant="outline" className="manga-button bg-white hover:bg-white border-black text-black dark:bg-gray-700 dark:text-white dark:border-gray-600">
                     Change Password
                   </Button>
                 </div>
@@ -62,23 +61,29 @@ const Settings = () => {
                 <div className="flex items-center justify-between">
                   <div>
                     <Label htmlFor="theme-mode" className="font-['Comic_Neue'] text-base font-bold">Dark Mode</Label>
-                    <p className="text-sm text-gray-500 font-['Comic_Neue']">Switch between light and dark themes</p>
+                    <p className="text-sm text-gray-500 dark:text-gray-400 font-['Comic_Neue']">Switch between light and dark themes</p>
                   </div>
                   <div className="flex items-center space-x-2">
-                    <Sun size={20} />
-                    <Switch id="theme-mode" className="data-[state=checked]:bg-[#00A7E1]" />
-                    <Moon size={20} />
+                    <Sun size={20} className={!darkMode ? "text-[#FFD700]" : ""} />
+                    <Switch 
+                      id="theme-mode" 
+                      checked={darkMode}
+                      onCheckedChange={toggleDarkMode}
+                      className="data-[state=checked]:bg-[#00A7E1]" 
+                    />
+                    <Moon size={20} className={darkMode ? "text-[#00A7E1]" : ""} />
                   </div>
                 </div>
                 
                 <div>
                   <Label className="font-['Comic_Neue'] text-base font-bold mb-2 block">Color Theme</Label>
                   <div className="grid grid-cols-5 gap-2">
-                    {['#FF3860', '#FFD700', '#00A7E1', '#14B8A6', '#8B5CF6'].map((color) => (
+                    {colorOptions.map((color) => (
                       <div 
                         key={color} 
-                        className={`h-10 rounded-full border-4 cursor-pointer ${color === '#FF3860' ? 'border-black' : 'border-transparent'}`} 
+                        className={`h-10 rounded-full border-4 cursor-pointer ${color === themeColor ? 'border-black dark:border-white' : 'border-transparent'}`} 
                         style={{ backgroundColor: color }}
+                        onClick={() => setThemeColor(color as any)}
                       />
                     ))}
                   </div>
@@ -87,12 +92,12 @@ const Settings = () => {
                 <div className="flex items-center justify-between">
                   <div>
                     <Label htmlFor="font-size" className="font-['Comic_Neue'] text-base font-bold">Font Size</Label>
-                    <p className="text-sm text-gray-500 font-['Comic_Neue']">Adjust the text size</p>
+                    <p className="text-sm text-gray-500 dark:text-gray-400 font-['Comic_Neue']">Adjust the text size</p>
                   </div>
                   <div className="flex items-center gap-4">
-                    <Button variant="outline" size="sm" className="h-8 w-8 p-0 border-2 border-black">A-</Button>
+                    <Button variant="outline" size="sm" className="h-8 w-8 p-0 border-2 border-black dark:border-gray-600">A-</Button>
                     <span className="font-bold">Aa</span>
-                    <Button variant="outline" size="sm" className="h-8 w-8 p-0 border-2 border-black">A+</Button>
+                    <Button variant="outline" size="sm" className="h-8 w-8 p-0 border-2 border-black dark:border-gray-600">A+</Button>
                   </div>
                 </div>
               </div>
@@ -292,7 +297,7 @@ const Settings = () => {
             </SettingsSection>
             
             <div className="pt-4 pb-10 flex justify-end">
-              <Button className="manga-button bg-[#FF3860] hover:bg-[#FF3860] text-white border-2 border-black">
+              <Button className="manga-button bg-[#FF3860] hover:bg-[#FF3860] text-white border-2 border-black dark:border-gray-600">
                 Save Settings
               </Button>
             </div>
@@ -313,21 +318,17 @@ const SettingsSection = ({
   children: React.ReactNode 
 }) => {
   return (
-    <motion.section
-      initial={{ opacity: 0, y: 20 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      transition={{ duration: 0.4 }}
-      viewport={{ once: true }}
-      className="bg-white rounded-xl border-4 border-black p-6"
+    <section
+      className="bg-white dark:bg-gray-800 rounded-xl border-4 border-black dark:border-gray-700 p-6 transition-colors duration-200"
     >
       <div className="flex items-center gap-3 mb-6">
-        <div className="p-2 bg-white rounded-full border-2 border-black">
+        <div className="p-2 bg-white dark:bg-gray-700 rounded-full border-2 border-black dark:border-gray-600">
           {icon}
         </div>
-        <h2 className="text-2xl font-['Bangers']">{title}</h2>
+        <h2 className="text-2xl font-['Bangers'] dark:text-white">{title}</h2>
       </div>
       {children}
-    </motion.section>
+    </section>
   );
 };
 

@@ -1,3 +1,4 @@
+
 import type { Config } from "tailwindcss";
 
 export default {
@@ -75,7 +76,9 @@ export default {
         		},
         		blue: {
           			500: '#0EA5E9'
-        		}
+        		},
+				// Theme color (dynamic)
+				theme: 'var(--theme-color)'
 			},
 			borderRadius: {
 				lg: 'var(--radius)',
