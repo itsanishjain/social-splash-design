@@ -1,167 +1,295 @@
-
-import React from 'react';
+import React from "react";
 import { Button } from "@/components/ui/button";
-import { motion } from 'framer-motion';
-import { Star, Sparkles, Zap } from 'lucide-react';
+import { motion } from "framer-motion";
+import { Star, Sparkles, Zap, Heart, MessageCircle } from "lucide-react";
+import { Link } from "react-router-dom";
 
 const Hero = () => {
   return (
-    <section className="min-h-[calc(100vh-4rem)] flex flex-col justify-center relative overflow-hidden bg-[#F0F8FF]">
+    <section className="min-h-[calc(100vh-4rem)] flex flex-col justify-center relative overflow-hidden bg-gradient-to-b from-[#FFD6E0] to-[#C7EEFF]">
       {/* Manga Background Elements */}
-      <div className="absolute inset-0 dot-pattern"></div>
-      <div className="absolute top-20 right-20 speed-lines transform rotate-45"></div>
-      
-      <div className="container py-20 grid md:grid-cols-2 gap-12 items-center">
+      <div className="absolute inset-0 dot-pattern opacity-40"></div>
+      <div className="absolute top-0 right-0 w-full h-64 speed-lines transform -rotate-45 opacity-20"></div>
+
+      {/* Decorative anime elements */}
+      <motion.div
+        className="absolute -top-10 -left-10 w-40 h-40"
+        animate={{
+          rotate: 360,
+          scale: [1, 1.1, 1],
+        }}
+        transition={{
+          rotate: { duration: 20, repeat: Infinity, ease: "linear" },
+          scale: { duration: 3, repeat: Infinity, ease: "easeInOut" },
+        }}
+      >
+        <img
+          src="https://api.dicebear.com/7.x/icons/svg?icon=sakura"
+          className="w-full h-full"
+          alt="sakura"
+        />
+      </motion.div>
+
+      <motion.div
+        className="absolute bottom-10 right-10 w-32 h-32"
+        animate={{
+          y: [0, -15, 0],
+        }}
+        transition={{
+          duration: 4,
+          repeat: Infinity,
+          ease: "easeInOut",
+        }}
+      >
+        <img
+          src="https://api.dicebear.com/7.x/icons/svg?icon=sushi"
+          className="w-full h-full"
+          alt="sushi"
+        />
+      </motion.div>
+
+      <div className="container py-20 grid md:grid-cols-2 gap-12 items-center relative z-10">
         {/* Left Column: Content */}
         <div className="space-y-8 relative z-10">
-          <motion.div 
+          <motion.div
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5 }}
+            transition={{ duration: 0.6 }}
           >
             <motion.div
-              initial={{ scale: 0, rotate: 0 }}
-              animate={{ scale: 1, rotate: -15 }}
-              transition={{ delay: 0.3, duration: 0.5 }}
-              className="starburst inline-block py-2 px-4 mb-6 text-black"
+              initial={{ scale: 0 }}
+              animate={{ scale: 1, rotate: [-10, 0, -10] }}
+              transition={{
+                scale: { duration: 0.5 },
+                rotate: { repeat: Infinity, duration: 2, ease: "easeInOut" },
+              }}
+              className="starburst inline-block py-2 px-4 mb-6 text-black bg-[#FFE66D]"
             >
-              NEW!
+              スーパー!
             </motion.div>
-            
-            <h1 className="heading-xl mb-4 text-[#0A0A0A] font-bold relative font-['Slackey']">
-              Find Your Manga Crew in <span className="sound-effect">MangaVerse</span>!
+
+            <h1 className="heading-xl mb-6 text-[#1A1A1A] font-bold font-['Bangers'] tracking-wide">
+              <span className="text-[#FF4F79]">Manga</span>Splash
+              <motion.span
+                className="sound-effect ml-2 text-[#FF4F79]"
+                animate={{ rotate: [0, -3, 3, 0] }}
+                transition={{ duration: 0.5, repeat: Infinity, repeatDelay: 2 }}
+              >
+                バン!
+              </motion.span>
             </h1>
-            
-            <div className="speech-bubble">
-              <p className="body-lg text-[#333]">
-                Talk about your favorite manga with fellow fans! Share your thoughts on beloved characters, unforgettable scenes, and predictions for upcoming chapters!
+
+            <div className="manga-panel p-6 bg-white border-[4px] border-black">
+              <p className="body-lg text-[#333] font-bold">
+                Connect with fellow manga fans! Share art, discuss storylines,
+                and make friends who love the same series!
               </p>
+              <div className="mt-4 flex items-center gap-2">
+                <Heart className="text-[#FF4F79] fill-[#FF4F79]" />
+                <span className="font-['Bangers'] tracking-wide text-lg">
+                  漫画の魂 - The Spirit of Manga!
+                </span>
+              </div>
             </div>
           </motion.div>
-          
-          <motion.div 
+
+          <motion.div
             className="flex flex-col sm:flex-row gap-4"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.4, duration: 0.5 }}
           >
-            <Button className="manga-button bg-[#FF3860] hover:bg-[#FF3860] text-black border-black">
-              <Sparkles className="w-5 h-5 mr-2 text-black" />
-              Start Now!
+            <Button
+              className="manga-button bg-[#FF4F79] hover:bg-[#FF4F79] text-white border-black text-lg h-14"
+              asChild
+            >
+              <Link to="/feed">
+                <Sparkles className="w-5 h-5 mr-2 text-white" />
+                Join Now!
+              </Link>
             </Button>
-            <Button variant="outline" className="manga-button bg-[#FFD700] hover:bg-[#FFD700] text-black border-black">
+            <Button
+              variant="outline"
+              className="manga-button bg-[#FFE66D] hover:bg-[#FFE66D] text-black border-black text-lg h-14"
+            >
               <Zap className="w-5 h-5 mr-2 text-black" />
-              See Demo
+              Watch Demo
             </Button>
           </motion.div>
-          
-          <motion.div 
+
+          <motion.div
             className="flex items-center gap-2 text-[#333]"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ delay: 0.6, duration: 0.5 }}
           >
             <div className="flex -space-x-2">
-              {[1, 2, 3, 4].map((i) => (
-                <motion.div 
-                  key={i} 
-                  className="w-8 h-8 rounded-full border-2 border-black overflow-hidden"
+              {[1, 2, 3, 4, 5].map((i) => (
+                <motion.div
+                  key={i}
+                  className="w-10 h-10 rounded-full border-2 border-black overflow-hidden"
                   initial={{ x: -20, opacity: 0 }}
                   animate={{ x: 0, opacity: 1 }}
-                  transition={{ delay: 0.2 * i, duration: 0.3 }}
+                  transition={{ delay: 0.15 * i, duration: 0.3 }}
                 >
-                  <img 
-                    src={`https://api.dicebear.com/7.x/pixel-art/svg?seed=manga${i}`} 
-                    alt="avatar" 
+                  <img
+                    src={`https://api.dicebear.com/7.x/avataaars/svg?seed=anime${i}`}
+                    alt="avatar"
                     className="w-full h-full object-cover"
                   />
                 </motion.div>
               ))}
             </div>
-            <p className="text-sm">Already <span className="font-bold text-[#FF3860]">10,000+</span> manga fans have joined!</p>
+            <p className="text-sm font-semibold">
+              Join <span className="font-bold text-[#FF4F79]">50,000+</span>{" "}
+              anime & manga fans!
+            </p>
           </motion.div>
         </div>
-        
+
         {/* Right Column: App Preview in Manga Style */}
-        <motion.div 
-          className="relative z-10"
+        <motion.div
+          className="relative"
           initial={{ opacity: 0, scale: 0.8 }}
           animate={{ opacity: 1, scale: 1 }}
-          transition={{ delay: 0.5, duration: 0.5 }}
+          transition={{ delay: 0.5, duration: 0.6 }}
         >
-          <motion.div 
-            className="manga-panel p-6 bg-white max-w-sm mx-auto"
-            whileHover={{ y: -5 }}
+          <div className="absolute top-0 right-0 w-full h-full manga-pattern opacity-5 z-0"></div>
+
+          {/* Main manga panel */}
+          <motion.div
+            className="manga-panel p-6 bg-white max-w-lg mx-auto relative z-10 rotate-2"
+            whileHover={{ rotate: 0, transition: { duration: 0.3 } }}
           >
-            <div className="absolute top-3 right-3 bg-[#FFD700] p-1 rounded-full border-2 border-black">
-              <Star size={16} className="text-black" />
+            <div className="absolute -top-6 -right-6 bg-[#FFE66D] p-2 rounded-full border-4 border-black rotate-12">
+              <Star size={20} className="text-black" />
             </div>
-            
+
+            {/* Post header */}
             <div className="flex items-center gap-3 mb-4">
-              <div className="w-10 h-10 rounded-full overflow-hidden border-2 border-black">
-                <img 
-                  src="https://api.dicebear.com/7.x/pixel-art/svg?seed=Tanjiro" 
-                  alt="avatar" 
+              <div className="w-12 h-12 rounded-full overflow-hidden border-3 border-black">
+                <img
+                  src="https://api.dicebear.com/7.x/avataaars/svg?seed=MangaQueen"
+                  alt="avatar"
                   className="w-full h-full object-cover"
                 />
               </div>
               <div>
-                <p className="font-bold text-sm">MangaFan42</p>
-                <p className="text-xs text-[#555]">Just now</p>
+                <p className="font-bold text-lg font-['Bangers']">SakuraChan</p>
+                <div className="flex items-center">
+                  <span className="text-xs text-[#555] bg-[#F0F0F0] px-2 py-1 rounded-full">
+                    Tokyo, Japan
+                  </span>
+                  <span className="text-xs text-[#555] ml-2">2min ago</span>
+                </div>
               </div>
             </div>
-            
-            <p className="text-sm mb-4 font-medium">Just read the latest One Piece chapter! Luffy's new technique is insane! What did you all think? 😲🏴‍☠️</p>
-            
-            <div className="manga-panel-small overflow-hidden mb-4 h-40 flex items-center justify-center bg-[#F0F8FF]">
-              <img 
-                src="https://api.dicebear.com/7.x/pixel-art/svg?seed=onepiece&backgroundColor=ffcb77" 
-                alt="manga art" 
-                className="w-full h-full object-contain"
-              />
+
+            {/* Post content */}
+            <div className="speech-bubble mb-4">
+              <p className="text-md mb-2 font-medium">
+                Just finished the latest chapter of Demon Slayer! Tanjiro's
+                character development is amazing! What do you all think?
+                刀鍛冶の里編 🔥⚔️
+              </p>
             </div>
-            
-            <div className="flex items-center justify-between text-xs text-[#555]">
-              <motion.div 
-                className="flex items-center gap-1"
+
+            {/* Post image */}
+            <div className="manga-panel-small overflow-hidden mb-4 h-48 flex items-center justify-center bg-[#F0F8FF] relative">
+              <img
+                src="https://api.dicebear.com/7.x/identicon/svg?seed=demonslayer&backgroundColor=c7ceea"
+                alt="manga art"
+                className="w-full h-full object-contain opacity-40"
+              />
+              <div className="absolute inset-0 flex items-center justify-center">
+                <span className="font-['Bangers'] text-4xl text-[#FF4F79] tracking-wider">
+                  MANGA ART
+                </span>
+              </div>
+            </div>
+
+            {/* Post reactions */}
+            <div className="flex items-center justify-between text-sm">
+              <motion.div
+                className="flex items-center gap-2"
                 whileHover={{ scale: 1.1 }}
                 whileTap={{ scale: 0.9 }}
               >
-                <div className="p-1 bg-[#FFD700] rounded-full border border-black">
+                <div className="p-1 bg-[#FF4F79] rounded-full border-2 border-black">
                   <motion.div
-                    whileTap={{ 
+                    whileTap={{
                       scale: [1, 1.5, 1],
                       rotate: [0, 15, -15, 0],
-                      transition: { duration: 0.5 }
+                      transition: { duration: 0.5 },
                     }}
                   >
-                    <Star size={14} className="text-black" />
+                    <Heart size={16} className="text-white" />
                   </motion.div>
                 </div>
-                <span>342</span>
+                <span className="font-bold">852</span>
               </motion.div>
-              <div className="flex items-center gap-1">
-                <div className="p-1 bg-[#00A7E1] rounded-full border border-black">
-                  <motion.div
-                    whileHover={{ scale: 1.2 }}
-                  >
-                    <Sparkles size={14} className="text-white" />
+
+              <motion.div
+                className="flex items-center gap-2"
+                whileHover={{ scale: 1.1 }}
+                whileTap={{ scale: 0.9 }}
+              >
+                <div className="p-1 bg-[#4FC4FF] rounded-full border-2 border-black">
+                  <motion.div whileHover={{ rotate: 15 }}>
+                    <MessageCircle size={16} className="text-white" />
                   </motion.div>
                 </div>
-                <span>28 comments</span>
-              </div>
+                <span className="font-bold">124 comments</span>
+              </motion.div>
+
+              <motion.div
+                className="flex items-center gap-2"
+                whileHover={{ scale: 1.1 }}
+                whileTap={{ scale: 0.9 }}
+              >
+                <div className="p-1 bg-[#FFE66D] rounded-full border-2 border-black">
+                  <motion.div whileHover={{ rotate: 15 }}>
+                    <Star size={16} className="text-black" />
+                  </motion.div>
+                </div>
+                <span className="font-bold">Save</span>
+              </motion.div>
             </div>
           </motion.div>
-          
-          <motion.div 
-            className="absolute -bottom-4 -right-4 w-20 h-20"
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ delay: 0.8, duration: 0.5 }}
+
+          {/* Sound effect */}
+          <motion.div
+            className="absolute -bottom-8 -right-8 z-20"
+            initial={{ scale: 0 }}
+            animate={{ scale: [0, 1.2, 1] }}
+            transition={{ delay: 1, duration: 0.5 }}
           >
-            <div className="sound-effect whitespace-nowrap">
-              AWESOME!
+            <div className="sound-effect whitespace-nowrap text-2xl">
+              スゴイ!
             </div>
+          </motion.div>
+
+          {/* Small decorative panels */}
+          <motion.div
+            className="manga-panel-small p-3 w-28 absolute -bottom-4 -left-4 bg-[#FFE66D] rotate-[-5deg] z-30"
+            initial={{ opacity: 0, x: -20 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ delay: 0.8, duration: 0.4 }}
+            whileHover={{ rotate: 0 }}
+          >
+            <p className="text-sm text-center font-['Bangers']">
+              NEW POSTS DAILY!
+            </p>
+          </motion.div>
+
+          <motion.div
+            className="manga-panel-small p-3 w-24 absolute top-[-20px] left-[30%] bg-[#4FC4FF] rotate-[8deg] z-30"
+            initial={{ opacity: 0, y: -20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 1, duration: 0.4 }}
+            whileHover={{ rotate: 0 }}
+          >
+            <p className="text-xs text-center font-['Bangers']">TRENDING!</p>
           </motion.div>
         </motion.div>
       </div>
