@@ -1,3 +1,4 @@
+
 import React from "react";
 import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
@@ -17,18 +18,6 @@ const CTA = () => {
           : "bg-gradient-to-br from-[#4FC4FF] to-[#C7EEFF]"
       }`}
     >
-      {/* Manga style decorative elements */}
-      <motion.div
-        className={`absolute top-0 left-1/2 transform -translate-x-1/2 -translate-y-1/2 starburst ${
-          darkMode ? "bg-[#8B5CF6]" : "bg-[#FF4F79]"
-        } text-white p-4 rounded-full border-4 border-black z-20 font-manga-accent text-xl shadow-[4px_4px_0px_#000] dark:shadow-[4px_4px_0px_#111827]`}
-        initial={{ scale: 0, rotate: 0 }}
-        animate={{ scale: 1, rotate: 15 }}
-        transition={{ duration: 0.5, delay: 0.3 }}
-      >
-        JOIN NOW!
-      </motion.div>
-
       <div className="absolute inset-0 dot-pattern opacity-30"></div>
       <div className="absolute bottom-0 left-0 w-full h-40 speed-lines transform rotate-45 opacity-20"></div>
 
@@ -145,54 +134,61 @@ const CTA = () => {
             </div>
           </motion.div>
 
-          <div className="relative">
-            <motion.div
-              className="absolute -top-8 -right-10 rotate-[-15deg]"
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              transition={{ delay: 0.7, duration: 0.3 }}
-            >
-              <div className={`speech-bubble p-3 ${
-                darkMode ? "bg-gray-700 border-gray-600" : ""
-              }`}>
-                <p className="text-sm font-bold font-manga-accent">
-                  Join 50,000+ fans!
-                </p>
+          {/* Call to Action buttons - centered and well-positioned */}
+          <motion.div
+            className="mt-10"
+            initial={{ opacity: 0, y: 10 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.6, duration: 0.4 }}
+          >
+            <div className="max-w-md mx-auto">
+              <div className="text-center mb-8">
+                <motion.div 
+                  className={`inline-block py-3 px-6 rounded-full ${
+                    darkMode ? "bg-[#8B5CF6]" : "bg-[#FF4F79]"
+                  } text-white font-manga-accent text-lg border-2 border-black shadow-[4px_4px_0px_#000] dark:shadow-[4px_4px_0px_#111827]`}
+                  whileHover={{ y: -3 }}
+                  whileTap={{ y: 0 }}
+                >
+                  JOIN NOW!
+                </motion.div>
               </div>
-            </motion.div>
-
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <motion.div
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
-              >
-                <Button
-                  size="lg"
-                  className="manga-button bg-[#FF4F79] hover:bg-[#FF4F79] text-white border-black text-lg h-14 font-manga-accent"
-                  asChild
+              
+              <div className="flex flex-col sm:flex-row gap-4 justify-center">
+                <motion.div
+                  whileHover={{ scale: 1.05 }}
+                  whileTap={{ scale: 0.95 }}
+                  className="w-full sm:w-auto"
                 >
-                  <Link to="/feed">
-                    <Sparkles className="w-5 h-5 mr-2 text-white" />
-                    Start Free Today
-                  </Link>
-                </Button>
-              </motion.div>
+                  <Button
+                    size="lg"
+                    className="manga-button bg-[#FF4F79] hover:bg-[#FF4F79] text-white border-black text-lg h-14 font-manga-accent w-full sm:w-auto"
+                    asChild
+                  >
+                    <Link to="/feed">
+                      <Sparkles className="w-5 h-5 mr-2 text-white" />
+                      Start Free Today
+                    </Link>
+                  </Button>
+                </motion.div>
 
-              <motion.div
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
-              >
-                <Button
-                  size="lg"
-                  variant="outline"
-                  className="manga-button bg-[#FFE66D] hover:bg-[#FFE66D] text-black border-black text-lg h-14 font-manga-accent"
+                <motion.div
+                  whileHover={{ scale: 1.05 }}
+                  whileTap={{ scale: 0.95 }}
+                  className="w-full sm:w-auto"
                 >
-                  <ArrowRight className="w-5 h-5 mr-2 text-black" />
-                  View Premium Plans
-                </Button>
-              </motion.div>
+                  <Button
+                    size="lg"
+                    variant="outline"
+                    className="manga-button bg-[#FFE66D] hover:bg-[#FFE66D] text-black border-black text-lg h-14 font-manga-accent w-full sm:w-auto"
+                  >
+                    <ArrowRight className="w-5 h-5 mr-2 text-black" />
+                    View Premium Plans
+                  </Button>
+                </motion.div>
+              </div>
             </div>
-          </div>
+          </motion.div>
 
           <motion.div
             className="mt-8 flex items-center justify-center gap-2"
