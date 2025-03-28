@@ -20,13 +20,16 @@ const generateTrendingTopics = () => {
 
 // Generate who to follow
 const generateWhoToFollow = () => {
-  return Array.from({ length: 3 }, () => ({
-    id: faker.string.uuid(),
-    name: faker.person.fullName(),
-    username: faker.internet.userName().toLowerCase(),
-    avatar: faker.image.avatar(),
-    verified: faker.datatype.boolean(0.3),
-  }));
+  return Array.from({ length: 3 }, (_, index) => {
+    const username = faker.internet.userName().toLowerCase();
+    return {
+      id: faker.string.uuid(),
+      name: faker.person.fullName(),
+      username,
+      avatar: `https://api.dicebear.com/7.x/avataaars/svg?seed=${username}-${index}`,
+      verified: faker.datatype.boolean(0.3),
+    };
+  });
 };
 
 const TrendingSidebar: React.FC = () => {
