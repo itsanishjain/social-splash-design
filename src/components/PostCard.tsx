@@ -1,4 +1,6 @@
+
 import React, { useState } from "react";
+import { Link } from "react-router-dom";
 import { Post } from "@/types/feedTypes";
 import { Avatar, AvatarImage, AvatarFallback } from "@/components/ui/avatar";
 import { Card, CardContent, CardFooter } from "@/components/ui/card";
@@ -51,27 +53,31 @@ const PostCard: React.FC<PostCardProps> = ({ post }) => {
         </AnimatePresence>
 
         <div className="flex gap-3 relative z-1">
-          <motion.div
-            whileHover={{ scale: 1.1 }}
-            transition={{ type: "spring", stiffness: 400, damping: 10 }}
-          >
-            <Avatar className="h-12 w-12 ring-4 ring-black">
-              <AvatarImage
-                src={post.user.avatar}
-                alt={post.user.name}
-                className="object-cover"
-              />
-              <AvatarFallback className="bg-[#FF4F79] text-white font-manga-accent">
-                {post.user.name.charAt(0)}
-              </AvatarFallback>
-            </Avatar>
-          </motion.div>
+          <Link to={`/profile/${post.user.id}`}>
+            <motion.div
+              whileHover={{ scale: 1.1 }}
+              transition={{ type: "spring", stiffness: 400, damping: 10 }}
+            >
+              <Avatar className="h-12 w-12 ring-4 ring-black">
+                <AvatarImage
+                  src={post.user.avatar}
+                  alt={post.user.name}
+                  className="object-cover"
+                />
+                <AvatarFallback className="bg-[#FF4F79] text-white font-manga-accent">
+                  {post.user.name.charAt(0)}
+                </AvatarFallback>
+              </Avatar>
+            </motion.div>
+          </Link>
 
           <div className="flex-1">
             <div className="flex items-center gap-1 mb-1">
-              <span className="font-bold font-manga-accent">
-                {post.user.name}
-              </span>
+              <Link to={`/profile/${post.user.id}`} className="hover:underline">
+                <span className="font-bold font-manga-accent">
+                  {post.user.name}
+                </span>
+              </Link>
               {post.user.verified && (
                 <motion.div
                   whileHover={{ rotate: 360 }}
@@ -83,9 +89,11 @@ const PostCard: React.FC<PostCardProps> = ({ post }) => {
                   </Badge>
                 </motion.div>
               )}
-              <span className="text-muted-foreground text-sm font-manga-body">
-                @{post.user.username}
-              </span>
+              <Link to={`/profile/${post.user.id}`} className="hover:underline">
+                <span className="text-muted-foreground text-sm font-manga-body">
+                  @{post.user.username}
+                </span>
+              </Link>
               <span className="text-muted-foreground text-sm mx-1">·</span>
               <span className="text-muted-foreground text-xs font-manga-body">
                 {formatDistanceToNow(post.createdAt, { addSuffix: true })}
