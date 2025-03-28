@@ -64,24 +64,24 @@ const Search = () => {
             className="mb-6"
           >
             <h1 className="text-3xl font-['Bangers'] text-black mb-4">Explore MangaVerse</h1>
-            <div className="relative">
-              <SearchIcon className="absolute left-3 top-3 text-gray-500" size={20} />
+            <div className="relative max-w-xl mx-auto md:mx-0">
+              <SearchIcon className="absolute left-3 top-2.5 text-gray-500" size={18} />
               <Input 
                 type="text" 
                 placeholder="Search for manga, users, or topics..." 
-                className="pl-10 border-2 border-black rounded-full h-12 bg-white text-base font-['Comic_Neue']"
+                className="pl-10 pr-16 border-2 border-black rounded-full h-10 bg-white text-sm font-['Comic_Neue']"
                 value={searchTerm}
                 onChange={(e) => setSearchTerm(e.target.value)}
               />
               {searchTerm && (
                 <button 
-                  className="absolute right-14 top-3"
+                  className="absolute right-14 top-2.5"
                   onClick={handleClearSearch}
                 >
-                  <X size={20} className="text-gray-500" />
+                  <X size={18} className="text-gray-500" />
                 </button>
               )}
-              <Button className="absolute right-3 top-2 manga-button bg-[#FFD700] hover:bg-[#FFD700] border-black text-black h-8">
+              <Button className="absolute right-2 top-1.5 manga-button bg-[#FFD700] hover:bg-[#FFD700] border-black text-black h-7 px-3 text-xs">
                 Search
               </Button>
             </div>
