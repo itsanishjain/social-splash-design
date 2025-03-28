@@ -64,13 +64,13 @@ const Search = () => {
             className="mb-6"
           >
             <h1 className="text-3xl font-['Bangers'] text-black mb-4">Explore MangaVerse</h1>
-            <div className="relative max-w-xl mx-auto md:mx-0">
+            <div className="relative w-full">
               <div className="relative group">
                 <SearchIcon className="absolute left-4 top-3.5 text-gray-500 group-hover:text-[#FF3860] transition-colors duration-200" size={20} />
                 <Input 
                   type="text" 
                   placeholder="Search for manga, users, or topics..." 
-                  className="pl-12 pr-12 py-6 border-3 border-black rounded-full h-12 bg-white text-md font-['Comic_Neue'] shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] focus-visible:shadow-[2px_2px_0px_0px_rgba(0,0,0,1)] focus-visible:translate-x-[2px] focus-visible:translate-y-[2px] transition-all duration-200 hover:border-[#FF3860]"
+                  className="w-full pl-12 pr-12 py-6 border-3 border-black rounded-full h-12 bg-white text-md font-['Comic_Neue'] shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] focus-visible:shadow-[2px_2px_0px_0px_rgba(0,0,0,1)] focus-visible:translate-x-[2px] focus-visible:translate-y-[2px] transition-all duration-200 hover:border-[#FF3860]"
                   value={searchTerm}
                   onChange={(e) => setSearchTerm(e.target.value)}
                 />
