@@ -1,5 +1,5 @@
+
 import React from "react";
-import { motion } from "framer-motion";
 import { Link, useLocation } from "react-router-dom";
 import {
   Home,
@@ -32,27 +32,17 @@ const Sidebar: React.FC = () => {
   return (
     <div className="w-64 h-screen sticky top-0 border-r border-border hidden md:flex flex-col justify-between p-4">
       <div>
-        <motion.div
-          className="text-2xl font-bold mb-8 px-4"
-          initial={{ opacity: 0, y: -20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5 }}
-        >
+        <div className="text-2xl font-bold mb-8 px-4">
           <span className="gradient-text">MangaVerse</span>
-        </motion.div>
+        </div>
 
         <nav>
           <ul className="space-y-2">
-            {sidebarItems.map((item, index) => {
+            {sidebarItems.map((item) => {
               const isActive = location.pathname === item.path;
 
               return (
-                <motion.li
-                  key={item.label}
-                  initial={{ opacity: 0, x: -20 }}
-                  animate={{ opacity: 1, x: 0 }}
-                  transition={{ duration: 0.3, delay: index * 0.1 }}
-                >
+                <li key={item.label}>
                   <Link to={item.path}>
                     <Button
                       variant={isActive ? "default" : "ghost"}
@@ -66,7 +56,7 @@ const Sidebar: React.FC = () => {
                       {item.label}
                     </Button>
                   </Link>
-                </motion.li>
+                </li>
               );
             })}
           </ul>
@@ -83,10 +73,7 @@ const Sidebar: React.FC = () => {
       </div>
 
       {currentUser && (
-        <motion.div
-          className="flex items-center p-4 mt-auto hover:bg-secondary/50 rounded-full cursor-pointer"
-          whileHover={{ scale: 1.05 }}
-        >
+        <div className="flex items-center p-4 mt-auto hover:bg-secondary/50 rounded-full cursor-pointer">
           <Avatar className="h-10 w-10 mr-3 border-2 border-black">
             <AvatarImage src={currentUser.avatar} alt={currentUser.name} />
             <AvatarFallback>{currentUser.name.charAt(0)}</AvatarFallback>
@@ -100,7 +87,7 @@ const Sidebar: React.FC = () => {
             </p>
           </div>
           <MoreHorizontal size={18} className="text-muted-foreground" />
-        </motion.div>
+        </div>
       )}
     </div>
   );
