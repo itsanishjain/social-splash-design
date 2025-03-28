@@ -1,73 +1,74 @@
 
 import React from 'react';
 import { MessageSquare, Users, Bell, Heart, Camera, Link } from 'lucide-react';
+import { Button } from "@/components/ui/button";
 
 const features = [
   {
-    icon: <Users className="h-8 w-8 text-violet-400" />,
+    icon: <Users className="h-6 w-6 text-primary" />,
     title: "Community Building",
-    description: "Create and join communities based on shared interests, passions, and goals."
+    description: "Create and join communities based on shared interests and goals."
   },
   {
-    icon: <MessageSquare className="h-8 w-8 text-pink-400" />,
+    icon: <MessageSquare className="h-6 w-6 text-primary" />,
     title: "Real-time Messaging",
-    description: "Connect instantly with friends and followers through our lightning-fast messaging system."
+    description: "Connect instantly with friends through our fast messaging system."
   },
   {
-    icon: <Bell className="h-8 w-8 text-indigo-400" />,
+    icon: <Bell className="h-6 w-6 text-primary" />,
     title: "Smart Notifications",
-    description: "Our AI prioritizes notifications so you never miss what matters most to you."
-  },
-  {
-    icon: <Heart className="h-8 w-8 text-violet-400" />,
-    title: "Meaningful Engagement",
-    description: "Our algorithm promotes genuine interactions over vanity metrics."
-  },
-  {
-    icon: <Camera className="h-8 w-8 text-pink-400" />,
-    title: "Rich Media Sharing",
-    description: "Share high-quality photos, videos, and stories with your network effortlessly."
-  },
-  {
-    icon: <Link className="h-8 w-8 text-indigo-400" />,
-    title: "Cross-Platform Integration",
-    description: "Seamlessly connect your other social accounts for a unified online presence."
+    description: "Our AI prioritizes notifications so you never miss what matters."
   }
 ];
 
 const Features = () => {
   return (
-    <section id="features" className="py-32 relative overflow-hidden">
-      {/* Background shapes */}
-      <div className="shape circle bg-purple-500/10 w-96 h-96 top-20 left-20 blur-3xl"></div>
-      <div className="shape circle bg-indigo-500/10 w-96 h-96 bottom-20 right-20 blur-3xl"></div>
-      
-      <div className="container relative z-10">
-        <div className="text-center mb-20 max-w-2xl mx-auto">
-          <h2 className="heading-lg mb-6 gradient-text">
-            Designed for Connection
-          </h2>
-          <p className="body-lg text-muted-foreground">
-            Our platform combines cutting-edge technology with intuitive design to create the most engaging social experience possible.
-          </p>
-        </div>
-        
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
-          {features.map((feature, index) => (
-            <div 
-              key={index} 
-              className={`neo-card p-8 group hover:translate-y-[-8px] transition-all duration-500 relative ${index % 3 === 0 ? 'mt-10' : index % 3 === 1 ? 'mt-0' : 'mt-20'}`}
-            >
-              {/* Glow effect on hover */}
-              <div className="absolute inset-0 bg-gradient-to-r from-purple-500/0 via-pink-500/0 to-indigo-500/0 group-hover:from-purple-500/10 group-hover:via-pink-500/10 group-hover:to-indigo-500/10 rounded-[inherit] transition-all duration-500 opacity-0 group-hover:opacity-100 blur-xl"></div>
+    <section id="features" className="py-16 relative overflow-hidden">
+      <div className="container section-container">
+        <div className="grid lg:grid-cols-2 gap-16 items-center">
+          {/* Left Column: Illustration */}
+          <div className="relative order-2 lg:order-1">
+            <div className="illustrated-card">
+              <div className="accent-bubble w-32 h-32 top-10 -left-5" style={{"--color-value": "170, 220, 180"} as React.CSSProperties}></div>
+              <div className="accent-bubble w-24 h-24 -bottom-5 right-10" style={{"--color-value": "255, 160, 190"} as React.CSSProperties}></div>
               
-              <div className="p-4 rounded-2xl inline-block mb-6 bg-white/5 group-hover:bg-white/10 transition-colors border border-white/10">
-                {feature.icon}
-              </div>
-              <h3 className="font-serif text-2xl font-semibold mb-3">{feature.title}</h3>
-              <p className="body-md text-muted-foreground">{feature.description}</p>
+              <img 
+                src="/lovable-uploads/1ab1c65e-cc29-4a7a-85b8-aaef4344911c.png" 
+                alt="Woman using Connectify" 
+                className="w-full h-auto relative z-10"
+              />
             </div>
-          ))}
+          </div>
+          
+          {/* Right Column: Content */}
+          <div className="space-y-10 order-1 lg:order-2">
+            <div>
+              <h2 className="heading-lg mb-4">
+                Simple tools for meaningful connections
+              </h2>
+              <p className="body-lg">
+                Our platform combines intuitive design with powerful features to create the most engaging social experience.
+              </p>
+            </div>
+            
+            <div className="space-y-8">
+              {features.map((feature, index) => (
+                <div key={index} className="flex gap-4">
+                  <div className="p-3 bg-secondary rounded-xl h-fit">
+                    {feature.icon}
+                  </div>
+                  <div>
+                    <h3 className="font-serif text-xl font-semibold mb-2">{feature.title}</h3>
+                    <p className="body-md">{feature.description}</p>
+                  </div>
+                </div>
+              ))}
+            </div>
+            
+            <Button className="cta-button">
+              Explore all features
+            </Button>
+          </div>
         </div>
       </div>
     </section>
