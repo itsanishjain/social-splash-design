@@ -25,6 +25,22 @@ interface PostCardProps {
 const PostCard: React.FC<PostCardProps> = ({ post }) => {
   const { likePost, bookmarkPost } = useFeed();
   const [isHovered, setIsHovered] = useState(false);
+  const [isLikeAnimating, setIsLikeAnimating] = useState(false);
+  const [isBookmarkAnimating, setIsBookmarkAnimating] = useState(false);
+
+  const handleLikeClick = () => {
+    setIsLikeAnimating(true);
+    likePost(post.id);
+    // Reset after animation completes
+    setTimeout(() => setIsLikeAnimating(false), 1000);
+  };
+
+  const handleBookmarkClick = () => {
+    setIsBookmarkAnimating(true);
+    bookmarkPost(post.id);
+    // Reset after animation completes
+    setTimeout(() => setIsBookmarkAnimating(false), 1000);
+  };
 
   return (
     <motion.div
@@ -171,8 +187,8 @@ const PostCard: React.FC<PostCardProps> = ({ post }) => {
           </motion.button>
 
           <motion.button
-            className="flex items-center gap-1"
-            onClick={() => likePost(post.id)}
+            className="flex items-center gap-1 relative"
+            onClick={handleLikeClick}
             whileHover={{ scale: 1.1 }}
             whileTap={{ scale: 0.9 }}
           >
@@ -187,7 +203,14 @@ const PostCard: React.FC<PostCardProps> = ({ post }) => {
                 >
                   <motion.div
                     whileTap={{ scale: 1.4 }}
-                    transition={{ type: "spring", stiffness: 400, damping: 17 }}
+                    animate={isLikeAnimating ? 
+                      { scale: [1, 1.5, 0.8, 1.2, 1] } : 
+                      { scale: 1 }
+                    }
+                    transition={isLikeAnimating ? 
+                      { duration: 0.8, times: [0, 0.2, 0.5, 0.8, 1], ease: "easeInOut" } : 
+                      { type: "spring", stiffness: 400, damping: 17 }
+                    }
                     className="bg-white rounded-full p-1 border-2 border-black shadow-[2px_2px_0px_#000] dark:bg-gray-800 dark:border-gray-600 dark:shadow-[2px_2px_0px_#333]"
                   >
                     <Heart size={18} fill="currentColor" />
@@ -195,6 +218,16 @@ const PostCard: React.FC<PostCardProps> = ({ post }) => {
                   <span className="text-xs font-bold font-manga-accent">
                     {post.likes}
                   </span>
+                  {isLikeAnimating && (
+                    <motion.div
+                      className="absolute"
+                      initial={{ opacity: 1, scale: 0.3, y: 0 }}
+                      animate={{ opacity: 0, scale: 2, y: -30 }}
+                      transition={{ duration: 0.8 }}
+                    >
+                      <div className="text-[#FF4F79] text-xl opacity-70">❤️</div>
+                    </motion.div>
+                  )}
                 </motion.div>
               ) : (
                 <motion.div
@@ -204,9 +237,12 @@ const PostCard: React.FC<PostCardProps> = ({ post }) => {
                   exit={{ scale: 0.5 }}
                   className="flex items-center gap-1 text-[#FF4F79] hover:text-[#CC2D4C]"
                 >
-                  <div className="bg-white rounded-full p-1 border-2 border-black shadow-[2px_2px_0px_#000] dark:bg-gray-800 dark:border-gray-600 dark:shadow-[2px_2px_0px_#333]">
+                  <motion.div 
+                    className="bg-white rounded-full p-1 border-2 border-black shadow-[2px_2px_0px_#000] dark:bg-gray-800 dark:border-gray-600 dark:shadow-[2px_2px_0px_#333]"
+                    whileHover={{ y: -2 }}
+                  >
                     <Heart size={18} />
-                  </div>
+                  </motion.div>
                   <span className="text-xs font-bold font-manga-accent">
                     {post.likes}
                   </span>
@@ -216,8 +252,8 @@ const PostCard: React.FC<PostCardProps> = ({ post }) => {
           </motion.button>
 
           <motion.button
-            className="flex items-center gap-1"
-            onClick={() => bookmarkPost(post.id)}
+            className="flex items-center gap-1 relative"
+            onClick={handleBookmarkClick}
             whileHover={{ scale: 1.1 }}
             whileTap={{ scale: 0.9 }}
           >
@@ -232,11 +268,28 @@ const PostCard: React.FC<PostCardProps> = ({ post }) => {
                 >
                   <motion.div
                     whileTap={{ scale: 1.2 }}
-                    transition={{ type: "spring", stiffness: 400, damping: 17 }}
+                    animate={isBookmarkAnimating ? 
+                      { rotate: [-10, 10, -10, 10, 0], y: [0, -5, 0] } : 
+                      { rotate: 0 }
+                    }
+                    transition={isBookmarkAnimating ? 
+                      { duration: 0.6, ease: "easeInOut" } : 
+                      { type: "spring", stiffness: 400, damping: 17 }
+                    }
                     className="bg-white rounded-full p-1 border-2 border-black shadow-[2px_2px_0px_#000] dark:bg-gray-800 dark:border-gray-600 dark:shadow-[2px_2px_0px_#333]"
                   >
                     <Star size={18} fill="currentColor" />
                   </motion.div>
+                  {isBookmarkAnimating && (
+                    <motion.div
+                      className="absolute top-0 right-0 left-0"
+                      initial={{ opacity: 1, scale: 0.3, y: 0 }}
+                      animate={{ opacity: 0, scale: 1.5, y: -20 }}
+                      transition={{ duration: 0.8 }}
+                    >
+                      <div className="text-[#FFE66D] text-xl flex justify-center">✨</div>
+                    </motion.div>
+                  )}
                 </motion.div>
               ) : (
                 <motion.div
@@ -246,9 +299,12 @@ const PostCard: React.FC<PostCardProps> = ({ post }) => {
                   exit={{ y: -5, opacity: 0 }}
                   className="text-[#FFE66D] hover:text-[#E0BC00]"
                 >
-                  <div className="bg-white rounded-full p-1 border-2 border-black shadow-[2px_2px_0px_#000] dark:bg-gray-800 dark:border-gray-600 dark:shadow-[2px_2px_0px_#333]">
+                  <motion.div 
+                    className="bg-white rounded-full p-1 border-2 border-black shadow-[2px_2px_0px_#000] dark:bg-gray-800 dark:border-gray-600 dark:shadow-[2px_2px_0px_#333]"
+                    whileHover={{ y: -2 }}
+                  >
                     <Star size={18} />
-                  </div>
+                  </motion.div>
                 </motion.div>
               )}
             </AnimatePresence>
