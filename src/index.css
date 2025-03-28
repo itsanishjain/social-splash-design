@@ -5,35 +5,35 @@
 
 @layer base {
   :root {
-    --background: 260 100% 99%;
-    --foreground: 260 25% 11%;
+    --background: 0 0% 100%;
+    --foreground: 240 10% 3.9%;
 
     --card: 0 0% 100%;
-    --card-foreground: 260 25% 11%;
+    --card-foreground: 240 10% 3.9%;
 
     --popover: 0 0% 100%;
-    --popover-foreground: 260 25% 11%;
+    --popover-foreground: 240 10% 3.9%;
 
-    --primary: 260 84% 63%;
+    --primary: 355 100% 45%;
     --primary-foreground: 0 0% 100%;
 
-    --secondary: 260 25% 95%;
-    --secondary-foreground: 260 25% 11%;
+    --secondary: 240 4.8% 95.9%;
+    --secondary-foreground: 240 5.9% 10%;
 
-    --muted: 260 25% 95%;
-    --muted-foreground: 260 25% 40%;
+    --muted: 240 4.8% 95.9%;
+    --muted-foreground: 240 3.8% 46.1%;
 
-    --accent: 260 84% 95%;
-    --accent-foreground: 260 84% 40%;
+    --accent: 340 82% 52%;
+    --accent-foreground: 0 0% 100%;
 
     --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 0 0% 100%;
+    --destructive-foreground: 0 0% 98%;
 
-    --border: 260 25% 90%;
-    --input: 260 25% 90%;
-    --ring: 260 84% 63%;
+    --border: 240 5.9% 90%;
+    --input: 240 5.9% 90%;
+    --ring: 355 100% 45%;
 
-    --radius: 0.75rem;
+    --radius: 0.5rem;
 
     --sidebar-background: 0 0% 98%;
     --sidebar-foreground: 240 5.3% 26.1%;
@@ -46,33 +46,33 @@
   }
 
   .dark {
-    --background: 260 25% 11%;
-    --foreground: 260 25% 95%;
+    --background: 240 10% 3.9%;
+    --foreground: 0 0% 98%;
 
-    --card: 260 25% 13%;
-    --card-foreground: 260 25% 95%;
+    --card: 240 10% 3.9%;
+    --card-foreground: 0 0% 98%;
 
-    --popover: 260 25% 13%;
-    --popover-foreground: 260 25% 95%;
+    --popover: 240 10% 3.9%;
+    --popover-foreground: 0 0% 98%;
 
-    --primary: 260 84% 63%;
-    --primary-foreground: 0 0% 100%;
+    --primary: 355 100% 45%;
+    --primary-foreground: 0 0% 98%;
 
-    --secondary: 260 25% 20%;
-    --secondary-foreground: 260 25% 95%;
+    --secondary: 240 3.7% 15.9%;
+    --secondary-foreground: 0 0% 98%;
 
-    --muted: 260 25% 20%;
-    --muted-foreground: 260 25% 70%;
+    --muted: 240 3.7% 15.9%;
+    --muted-foreground: 240 5% 64.9%;
 
-    --accent: 260 84% 20%;
-    --accent-foreground: 260 84% 90%;
+    --accent: 340 82% 52%;
+    --accent-foreground: 0 0% 98%;
 
     --destructive: 0 62.8% 30.6%;
-    --destructive-foreground: 0 0% 100%;
+    --destructive-foreground: 0 0% 98%;
 
-    --border: 260 25% 20%;
-    --input: 260 25% 20%;
-    --ring: 260 84% 63%;
+    --border: 240 3.7% 15.9%;
+    --input: 240 3.7% 15.9%;
+    --ring: 355 100% 45%;
   }
 }
 
@@ -91,11 +91,11 @@
 }
 
 .gradient-text {
-  @apply bg-clip-text text-transparent bg-gradient-to-r from-violet-500 via-pink-500 to-blue-500 font-serif;
+  @apply bg-clip-text text-transparent bg-gradient-to-r from-red-600 via-pink-500 to-blue-500 font-serif;
 }
 
 .gradient-bg {
-  @apply bg-gradient-to-r from-violet-500 via-pink-500 to-blue-500;
+  @apply bg-gradient-to-r from-red-600 via-pink-500 to-blue-500;
 }
 
 .glass-card {
@@ -104,6 +104,106 @@
 
 .animate-initial {
   opacity: 0;
+}
+
+/* Comic Book Specific Styles */
+.comic-border {
+  position: relative;
+  border: 3px solid black;
+  box-shadow: 5px 5px 0px #000;
+}
+
+.comic-panel {
+  position: relative;
+  border: 3px solid black;
+  box-shadow: 5px 5px 0px #000;
+  background-color: white;
+  overflow: hidden;
+}
+
+.comic-panel::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: repeating-linear-gradient(
+    90deg,
+    #ff9999,
+    #ff9999 10px,
+    #ffcc99 10px,
+    #ffcc99 20px
+  );
+}
+
+.speech-bubble {
+  position: relative;
+  background: white;
+  border: 3px solid black;
+  border-radius: 30px;
+  padding: 20px;
+  filter: drop-shadow(3px 3px 0 rgba(0,0,0,0.5));
+}
+
+.speech-bubble:after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  width: 0;
+  height: 0;
+  border: 20px solid transparent;
+  border-top-color: white;
+  border-bottom: 0;
+  margin-left: -20px;
+  margin-bottom: -20px;
+  filter: drop-shadow(0 3px 0 rgba(0,0,0,0.5));
+}
+
+.manga-gradient {
+  background: linear-gradient(90deg, #ea384c 0%, #de3163 100%);
+}
+
+.action-text {
+  font-family: 'Comic Sans MS', cursive, sans-serif;
+  font-weight: bold;
+  color: #ea384c;
+  text-shadow: 2px 2px 0px rgba(0,0,0,0.3);
+  transform: rotate(-5deg);
+}
+
+.manga-btn {
+  position: relative;
+  padding: 0.75rem 1.5rem;
+  border: 3px solid black;
+  background: white;
+  box-shadow: 4px 4px 0px black;
+  font-weight: bold;
+  text-transform: uppercase;
+  transition: all 0.2s;
+}
+
+.manga-btn:hover {
+  transform: translate(2px, 2px);
+  box-shadow: 2px 2px 0px black;
+}
+
+.manga-btn:active {
+  transform: translate(4px, 4px);
+  box-shadow: 0px 0px 0px black;
+}
+
+.starburst {
+  position: absolute;
+  background: #FDD835;
+  color: black;
+  font-weight: bold;
+  padding: 10px;
+  border: 3px solid black;
+  box-shadow: 3px 3px 0 rgba(0,0,0,0.5);
+  transform: rotate(15deg);
+  z-index: 10;
 }
 
 /* Additional Typography Classes */
@@ -129,4 +229,32 @@
 
 .body-sm {
   @apply font-sans text-sm;
+}
+
+/* Manga Speech Dots */
+.speech-dots {
+  position: relative;
+}
+
+.speech-dots::after {
+  content: '...';
+  position: absolute;
+  font-size: 2rem;
+  line-height: 1;
+  bottom: -0.5rem;
+  right: -1rem;
+  font-weight: bold;
+}
+
+/* Sound Effect Text */
+.sound-effect {
+  font-family: 'Impact', sans-serif;
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  transform: rotate(-5deg) skew(-5deg);
+  color: #ea384c;
+  text-shadow: 
+    3px 3px 0 #fff,
+    6px 6px 0 #000;
 }

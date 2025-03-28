@@ -8,6 +8,7 @@ import { FeedProvider } from "@/contexts/FeedContext";
 import Index from "./pages/Index";
 import Feed from "./pages/Feed";
 import NotFound from "./pages/NotFound";
+import MobileNav from "./components/MobileNav";
 
 const queryClient = new QueryClient();
 
@@ -24,6 +25,7 @@ const App = () => (
             {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
             <Route path="*" element={<NotFound />} />
           </Routes>
+          <MobileNav />
         </BrowserRouter>
       </FeedProvider>
     </TooltipProvider>
