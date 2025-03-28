@@ -24,7 +24,7 @@ const MobileNav: React.FC = () => {
         return (
           <Link to={item.path} key={item.path}>
             <button 
-              className={`p-3 flex flex-col items-center ${isActive ? `text-[${themeColor}]` : 'text-black dark:text-white'}`}
+              className="p-3 flex flex-col items-center text-black dark:text-white"
             >
               <div
                 className={`rounded-full p-2 border-2 border-black dark:border-gray-600 ${

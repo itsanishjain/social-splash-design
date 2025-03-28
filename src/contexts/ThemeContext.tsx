@@ -39,6 +39,10 @@ export const ThemeProvider: React.FC<{ children: React.ReactNode }> = ({ childre
     
     // Apply theme color as a CSS variable
     document.documentElement.style.setProperty('--theme-color', themeColor);
+    
+    // Update CSS variables based on the theme
+    document.documentElement.style.setProperty('--primary', darkMode ? '196 100% 47%' : '196 100% 47%');
+    document.documentElement.style.setProperty('--accent', darkMode ? '349 89% 60%' : '349 89% 60%');
   }, [darkMode, themeColor]);
 
   const toggleDarkMode = () => {
