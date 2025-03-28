@@ -1,4 +1,3 @@
-
 import React from "react";
 import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
@@ -8,28 +7,16 @@ import { useTheme } from "@/contexts/ThemeContext";
 
 const CTA = () => {
   const { darkMode } = useTheme();
-  
+
   return (
     <section
       id="join-now"
       className={`py-24 relative overflow-hidden ${
-        darkMode 
-          ? "bg-gradient-to-br from-[#2A4365] to-[#1A365D]" 
+        darkMode
+          ? "bg-gradient-to-br from-[#2A4365] to-[#1A365D]"
           : "bg-gradient-to-br from-[#4FC4FF] to-[#C7EEFF]"
       }`}
     >
-      {/* Join Now Stamp - positioned in the top left */}
-      <div className="absolute top-8 left-8 z-20">
-        <div className={`flex items-center justify-center w-24 h-24 rounded-full 
-          bg-[#FF4F79] border-[3px] border-dashed border-black
-          shadow-[4px_4px_0px_#000]`}
-        >
-          <span className="font-bold text-white text-xl tracking-wide">
-            JOIN<br/>NOW!
-          </span>
-        </div>
-      </div>
-
       <div className="container relative z-10">
         <motion.div
           className={`p-10 rounded-xl max-w-5xl mx-auto ${
@@ -41,14 +28,15 @@ const CTA = () => {
         >
           {/* Header */}
           <div className="text-center mb-16">
-            <h2 className={`text-4xl md:text-5xl font-black mb-4 ${
-              darkMode ? "text-white" : "text-[#1A1A1A]"
-            }`}>
+            <h2
+              className={`text-4xl md:text-5xl font-black mb-4 ${
+                darkMode ? "text-white" : "text-[#1A1A1A]"
+              }`}
+            >
               Ready to Join the
-              <span className="text-[#FF4F79] ml-3">
-                MANGA
-              </span>
-              <br/>Revolution?
+              <span className="text-[#FF4F79] ml-3">MANGA</span>
+              <br />
+              Revolution?
             </h2>
           </div>
 
@@ -95,9 +83,7 @@ const CTA = () => {
               className="bg-black hover:bg-black text-white text-lg h-14 w-full font-bold rounded-lg border-2 border-black"
               asChild
             >
-              <Link to="/feed">
-                Start Free Today
-              </Link>
+              <Link to="/feed">Start Free Today</Link>
             </Button>
 
             <Button
