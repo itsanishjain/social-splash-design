@@ -1,6 +1,7 @@
 
 import React from 'react';
 import { Button } from "@/components/ui/button";
+import { Link } from "react-router-dom";
 
 const CTA = () => {
   return (
@@ -18,8 +19,8 @@ const CTA = () => {
           </p>
           
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Button size="lg" className="rounded-full text-base px-8">
-              Get Started — It's Free
+            <Button size="lg" className="rounded-full text-base px-8" asChild>
+              <Link to="/feed">Try the Feed Demo</Link>
             </Button>
             <Button size="lg" variant="outline" className="rounded-full text-base px-8">
               Contact Sales
