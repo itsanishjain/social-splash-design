@@ -89,7 +89,7 @@ const CTA = () => {
             <Button
               size="lg"
               variant="outline"
-              className="bg-white hover:bg-white text-black text-lg h-14 w-full font-bold rounded-lg border-2 border-black"
+              className="bg-white hover:bg-black hover:text-white text-black text-lg h-14 w-full font-bold rounded-lg border-2 border-black"
             >
               <ArrowRight className="w-5 h-5 mr-2" />
               View Premium Plans
