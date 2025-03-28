@@ -25,16 +25,16 @@ const Hero = () => {
               transition={{ delay: 0.3, duration: 0.5 }}
               className="starburst inline-block py-2 px-4 mb-6 text-black"
             >
-              NEW!
+              新登場!
             </motion.div>
             
-            <h1 className="heading-xl mb-4 text-[#0A0A0A] font-bold relative">
-              Where <span className="sound-effect">CONNECTIONS</span> Become Community!
+            <h1 className="heading-xl mb-4 text-[#0A0A0A] font-bold relative font-['Slackey']">
+              仲間を見つけよう！<span className="sound-effect">マンガバース</span>で！
             </h1>
             
             <div className="speech-bubble">
               <p className="body-lg text-[#333]">
-                Join millions creating meaningful connections on our next-gen social platform. Share moments that matter with people who care!
+                あなたの好きなマンガについて語り合える！お気に入りのキャラ、忘れられないシーン、次の展開予想までみんなと共有しよう！
               </p>
             </div>
           </motion.div>
@@ -45,13 +45,13 @@ const Hero = () => {
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.4, duration: 0.5 }}
           >
-            <Button className="manga-button bg-[#00A7E1] hover:bg-[#00A7E1] text-white">
-              <Sparkles className="w-5 h-5 mr-2" />
-              Get Started Now!
+            <Button className="manga-button bg-[#FF3860] hover:bg-[#FF3860] text-black border-black">
+              <Sparkles className="w-5 h-5 mr-2 text-black" />
+              今すぐ始める!
             </Button>
-            <Button variant="outline" className="manga-button bg-[#FFD700] hover:bg-[#FFD700] text-black">
-              <Zap className="w-5 h-5 mr-2" />
-              Watch Demo
+            <Button variant="outline" className="manga-button bg-[#FFD700] hover:bg-[#FFD700] text-black border-black">
+              <Zap className="w-5 h-5 mr-2 text-black" />
+              デモを見る
             </Button>
           </motion.div>
           
@@ -65,14 +65,20 @@ const Hero = () => {
               {[1, 2, 3, 4].map((i) => (
                 <motion.div 
                   key={i} 
-                  className="w-8 h-8 rounded-full bg-[#FF3860] border-2 border-black"
+                  className="w-8 h-8 rounded-full border-2 border-black overflow-hidden"
                   initial={{ x: -20, opacity: 0 }}
                   animate={{ x: 0, opacity: 1 }}
                   transition={{ delay: 0.2 * i, duration: 0.3 }}
-                />
+                >
+                  <img 
+                    src={`https://api.dicebear.com/7.x/avataaars/svg?seed=manga${i}`} 
+                    alt="avatar" 
+                    className="w-full h-full object-cover"
+                  />
+                </motion.div>
               ))}
             </div>
-            <p className="text-sm">Join <span className="font-bold text-[#FF3860]">10K+</span> early adopters</p>
+            <p className="text-sm">既に <span className="font-bold text-[#FF3860]">1万人以上</span> のマンガファンが参加中!</p>
           </motion.div>
         </div>
         
@@ -92,17 +98,27 @@ const Hero = () => {
             </div>
             
             <div className="flex items-center gap-3 mb-4">
-              <div className="w-10 h-10 rounded-full bg-[#00A7E1] border-2 border-black"></div>
+              <div className="w-10 h-10 rounded-full overflow-hidden border-2 border-black">
+                <img 
+                  src="https://api.dicebear.com/7.x/avataaars/svg?seed=Tanjiro" 
+                  alt="avatar" 
+                  className="w-full h-full object-cover"
+                />
+              </div>
               <div>
-                <p className="font-bold text-sm">Yuki Tanaka</p>
-                <p className="text-xs text-[#555]">Just now</p>
+                <p className="font-bold text-sm">田中ヒロシ</p>
+                <p className="text-xs text-[#555]">たった今</p>
               </div>
             </div>
             
-            <p className="text-sm mb-4 font-medium">Finally launched my new photography portfolio! So excited to share my work with all of you ✨📸</p>
+            <p className="text-sm mb-4 font-medium">ワンピース最新刊読んだ！ルフィの新技が凄すぎる！みんなも読んだ？感想聞かせて！😲🏴‍☠️</p>
             
             <div className="manga-panel-small overflow-hidden mb-4 h-40 flex items-center justify-center bg-[#F0F8FF]">
-              <p className="text-sm text-[#555] p-4">Photo showcase</p>
+              <img 
+                src="https://api.dicebear.com/7.x/pixel-art/svg?seed=onepiece&backgroundColor=ffcb77" 
+                alt="manga art" 
+                className="w-full h-full object-contain"
+              />
             </div>
             
             <div className="flex items-center justify-between text-xs text-[#555]">
@@ -132,7 +148,7 @@ const Hero = () => {
                     <Sparkles size={14} className="text-white" />
                   </motion.div>
                 </div>
-                <span>28 comments</span>
+                <span>28 コメント</span>
               </div>
             </div>
           </motion.div>
@@ -144,7 +160,7 @@ const Hero = () => {
             transition={{ delay: 0.8, duration: 0.5 }}
           >
             <div className="sound-effect whitespace-nowrap">
-              WOW!
+              スゴイ!
             </div>
           </motion.div>
         </motion.div>

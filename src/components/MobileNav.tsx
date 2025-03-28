@@ -25,8 +25,9 @@ const MobileNav: React.FC = () => {
             }}
             className="bg-white rounded-full p-2 border-2 border-black"
           >
-            <Home size={24} />
+            <Home size={24} className="text-black" />
           </motion.div>
+          <span className="text-xs mt-1 text-black font-bold">ホーム</span>
         </motion.button>
       </Link>
       
@@ -42,8 +43,9 @@ const MobileNav: React.FC = () => {
           }}
           className="bg-white rounded-full p-2 border-2 border-black"
         >
-          <Search size={24} />
+          <Search size={24} className="text-black" />
         </motion.div>
+        <span className="text-xs mt-1 text-black font-bold">検索</span>
       </motion.button>
       
       <motion.button 
@@ -58,8 +60,9 @@ const MobileNav: React.FC = () => {
           }}
           className="bg-white rounded-full p-2 border-2 border-black"
         >
-          <Bell size={24} />
+          <Bell size={24} className="text-black" />
         </motion.div>
+        <span className="text-xs mt-1 text-black font-bold">通知</span>
       </motion.button>
       
       <Link to="/feed">
@@ -75,8 +78,9 @@ const MobileNav: React.FC = () => {
             }}
             className="bg-white rounded-full p-2 border-2 border-black"
           >
-            <Mail size={24} />
+            <Mail size={24} className="text-black" />
           </motion.div>
+          <span className="text-xs mt-1 text-black font-bold">メッセージ</span>
         </motion.button>
       </Link>
     </motion.div>

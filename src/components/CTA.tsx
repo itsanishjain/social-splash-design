@@ -15,7 +15,7 @@ const CTA = () => {
         animate={{ scale: 1, rotate: 15 }}
         transition={{ duration: 0.5, delay: 0.3 }}
       >
-        SPECIAL!
+        スペシャル!
       </motion.div>
       
       <div className="absolute inset-0 dot-pattern"></div>
@@ -34,8 +34,8 @@ const CTA = () => {
             animate={{ y: 0, opacity: 1 }}
             transition={{ delay: 0.2, duration: 0.5 }}
           >
-            <h2 className="heading-lg mb-4 text-[#0A0A0A]">
-              Ready to <motion.span 
+            <h2 className="heading-lg mb-4 text-[#0A0A0A] font-['Slackey']">
+              マンガの世界を <motion.span 
                 className="sound-effect inline-block"
                 initial={{ scale: 0.8 }}
                 animate={{ scale: 1.1 }}
@@ -44,7 +44,7 @@ const CTA = () => {
                   repeatType: "reverse", 
                   duration: 1.5 
                 }}
-              >POWER UP</motion.span> your social experience?
+              >パワーアップ!</motion.span> する準備はいい？
             </h2>
           </motion.div>
           
@@ -55,7 +55,7 @@ const CTA = () => {
             transition={{ delay: 0.4, duration: 0.5 }}
           >
             <p className="body-lg">
-              Join thousands already creating meaningful connections on the platform built for genuine social engagement!
+              すでに何千人ものマンガファンが集まっています！あなたも好きな作品について語り合える仲間を見つけよう！
             </p>
           </motion.div>
           
@@ -64,10 +64,10 @@ const CTA = () => {
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
             >
-              <Button size="lg" className="manga-button bg-[#00A7E1] hover:bg-[#00A7E1] text-white" asChild>
+              <Button size="lg" className="manga-button bg-[#FF3860] hover:bg-[#FF3860] text-black border-black" asChild>
                 <Link to="/feed">
-                  <Sparkles className="w-5 h-5 mr-2" />
-                  Try the Feed Demo
+                  <Sparkles className="w-5 h-5 mr-2 text-black" />
+                  フィードを体験する
                 </Link>
               </Button>
             </motion.div>
@@ -76,9 +76,9 @@ const CTA = () => {
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
             >
-              <Button size="lg" variant="outline" className="manga-button bg-[#FFD700] hover:bg-[#FFD700] text-black">
-                <Zap className="w-5 h-5 mr-2" />
-                Contact Sales
+              <Button size="lg" variant="outline" className="manga-button bg-[#FFD700] hover:bg-[#FFD700] text-black border-black">
+                <Zap className="w-5 h-5 mr-2 text-black" />
+                お問い合わせ
               </Button>
             </motion.div>
           </div>
@@ -90,7 +90,7 @@ const CTA = () => {
             transition={{ delay: 0.8, duration: 0.5 }}
           >
             <Star className="text-[#FFD700] fill-[#FFD700] h-5 w-5" />
-            <p className="body-sm">No credit card required. Start with our free plan!</p>
+            <p className="body-sm">クレジットカード不要。無料プランからお試し！</p>
             <Star className="text-[#FFD700] fill-[#FFD700] h-5 w-5" />
           </motion.div>
         </motion.div>
