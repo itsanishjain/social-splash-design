@@ -1,4 +1,3 @@
-
 import React from "react";
 import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
@@ -20,12 +19,14 @@ const CTA = () => {
     >
       {/* Manga style decorative elements */}
       <motion.div
-        className="absolute top-10 right-10 starburst bg-[#FF4F79] text-white border-black z-10 font-manga-accent"
+        className={`absolute top-0 left-1/2 transform -translate-x-1/2 -translate-y-1/2 starburst ${
+          darkMode ? "bg-[#8B5CF6]" : "bg-[#FF4F79]"
+        } text-white p-4 rounded-full border-4 border-black z-20 font-manga-accent text-xl shadow-[4px_4px_0px_#000] dark:shadow-[4px_4px_0px_#111827]`}
         initial={{ scale: 0, rotate: 0 }}
         animate={{ scale: 1, rotate: 15 }}
         transition={{ duration: 0.5, delay: 0.3 }}
       >
-        限定！
+        JOIN NOW!
       </motion.div>
 
       <div className="absolute inset-0 dot-pattern opacity-30"></div>
@@ -60,12 +61,6 @@ const CTA = () => {
           animate={{ scale: 1, opacity: 1 }}
           transition={{ duration: 0.5 }}
         >
-          <div className={`absolute -top-5 -left-5 manga-panel-small p-3 ${
-            darkMode ? "bg-[#FFD700]" : "bg-[#FFE66D]"
-          } rotate-[-8deg] border-black font-manga-accent text-lg`}>
-            JOIN NOW!
-          </div>
-
           <motion.div
             initial={{ y: -20, opacity: 0 }}
             animate={{ y: 0, opacity: 1 }}
