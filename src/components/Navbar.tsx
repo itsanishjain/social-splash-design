@@ -1,7 +1,7 @@
 
 import React from 'react';
 import { Button } from "@/components/ui/button";
-import { Menu, X, Flash } from 'lucide-react';
+import { Menu, X, Zap } from 'lucide-react';
 import { motion } from 'framer-motion';
 
 const Navbar = () => {
@@ -17,7 +17,7 @@ const Navbar = () => {
           transition={{ duration: 0.3 }}
         >
           <div className="h-10 w-10 rounded-full bg-[#FF3860] border-2 border-black flex items-center justify-center">
-            <span className="text-white font-bold text-xl">マ</span>
+            <span className="text-white font-bold text-xl">M</span>
           </div>
           <span className="text-xl font-bold font-['Slackey']">MangaVerse</span>
         </motion.div>
@@ -30,7 +30,7 @@ const Navbar = () => {
             transition={{ duration: 0.3, delay: 0.3 }}
           >
             <Button variant="outline" className="manga-button bg-[#FFD700] hover:bg-[#FFD700] text-black border-black">
-              <span className="text-black">ログイン</span>
+              <span className="text-black">Login</span>
             </Button>
           </motion.div>
           
@@ -40,7 +40,7 @@ const Navbar = () => {
             transition={{ duration: 0.3, delay: 0.4 }}
           >
             <Button className="manga-button bg-[#00A7E1] hover:bg-[#00A7E1] border-black">
-              <span className="text-black hover:text-white transition-colors">無料登録!</span>
+              <span className="text-black hover:text-black transition-colors">Sign Up Free!</span>
             </Button>
           </motion.div>
         </nav>
@@ -67,10 +67,10 @@ const Navbar = () => {
           <nav className="flex flex-col gap-4 manga-panel-small p-4">
             <div className="flex flex-col gap-2 mt-2">
               <Button variant="outline" className="manga-button bg-[#FFD700] hover:bg-[#FFD700] text-black w-full justify-center border-black">
-                <span className="text-black">ログイン</span>
+                <span className="text-black">Login</span>
               </Button>
-              <Button className="manga-button bg-[#00A7E1] hover:bg-[#00A7E1] text-black hover:text-white w-full justify-center border-black">
-                無料登録!
+              <Button className="manga-button bg-[#00A7E1] hover:bg-[#00A7E1] text-black hover:text-black w-full justify-center border-black">
+                Sign Up Free!
               </Button>
             </div>
           </nav>

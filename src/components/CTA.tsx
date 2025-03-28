@@ -15,7 +15,7 @@ const CTA = () => {
         animate={{ scale: 1, rotate: 15 }}
         transition={{ duration: 0.5, delay: 0.3 }}
       >
-        スペシャル!
+        SPECIAL!
       </motion.div>
       
       <div className="absolute inset-0 dot-pattern"></div>
@@ -35,7 +35,7 @@ const CTA = () => {
             transition={{ delay: 0.2, duration: 0.5 }}
           >
             <h2 className="heading-lg mb-4 text-[#0A0A0A] font-['Slackey']">
-              マンガの世界を <motion.span 
+              Ready to <motion.span 
                 className="sound-effect inline-block"
                 initial={{ scale: 0.8 }}
                 animate={{ scale: 1.1 }}
@@ -44,7 +44,7 @@ const CTA = () => {
                   repeatType: "reverse", 
                   duration: 1.5 
                 }}
-              >パワーアップ!</motion.span> する準備はいい？
+              >POWER UP!</motion.span> your manga world?
             </h2>
           </motion.div>
           
@@ -55,7 +55,7 @@ const CTA = () => {
             transition={{ delay: 0.4, duration: 0.5 }}
           >
             <p className="body-lg">
-              すでに何千人ものマンガファンが集まっています！あなたも好きな作品について語り合える仲間を見つけよう！
+              Thousands of manga fans are already connecting! Find your crew and join the conversation about your favorite series today!
             </p>
           </motion.div>
           
@@ -67,7 +67,7 @@ const CTA = () => {
               <Button size="lg" className="manga-button bg-[#FF3860] hover:bg-[#FF3860] text-black border-black" asChild>
                 <Link to="/feed">
                   <Sparkles className="w-5 h-5 mr-2 text-black" />
-                  フィードを体験する
+                  Experience the Feed
                 </Link>
               </Button>
             </motion.div>
@@ -78,7 +78,7 @@ const CTA = () => {
             >
               <Button size="lg" variant="outline" className="manga-button bg-[#FFD700] hover:bg-[#FFD700] text-black border-black">
                 <Zap className="w-5 h-5 mr-2 text-black" />
-                お問い合わせ
+                Contact Us
               </Button>
             </motion.div>
           </div>
@@ -90,7 +90,7 @@ const CTA = () => {
             transition={{ delay: 0.8, duration: 0.5 }}
           >
             <Star className="text-[#FFD700] fill-[#FFD700] h-5 w-5" />
-            <p className="body-sm">クレジットカード不要。無料プランからお試し！</p>
+            <p className="body-sm">No credit card required. Start with our free plan!</p>
             <Star className="text-[#FFD700] fill-[#FFD700] h-5 w-5" />
           </motion.div>
         </motion.div>

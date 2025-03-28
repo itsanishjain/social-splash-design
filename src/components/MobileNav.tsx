@@ -27,7 +27,7 @@ const MobileNav: React.FC = () => {
           >
             <Home size={24} className="text-black" />
           </motion.div>
-          <span className="text-xs mt-1 text-black font-bold">ホーム</span>
+          <span className="text-xs mt-1 text-black font-bold">Home</span>
         </motion.button>
       </Link>
       
@@ -45,7 +45,7 @@ const MobileNav: React.FC = () => {
         >
           <Search size={24} className="text-black" />
         </motion.div>
-        <span className="text-xs mt-1 text-black font-bold">検索</span>
+        <span className="text-xs mt-1 text-black font-bold">Search</span>
       </motion.button>
       
       <motion.button 
@@ -62,7 +62,7 @@ const MobileNav: React.FC = () => {
         >
           <Bell size={24} className="text-black" />
         </motion.div>
-        <span className="text-xs mt-1 text-black font-bold">通知</span>
+        <span className="text-xs mt-1 text-black font-bold">Alerts</span>
       </motion.button>
       
       <Link to="/feed">
@@ -80,7 +80,7 @@ const MobileNav: React.FC = () => {
           >
             <Mail size={24} className="text-black" />
           </motion.div>
-          <span className="text-xs mt-1 text-black font-bold">メッセージ</span>
+          <span className="text-xs mt-1 text-black font-bold">Messages</span>
         </motion.button>
       </Link>
     </motion.div>

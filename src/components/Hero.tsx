@@ -25,16 +25,16 @@ const Hero = () => {
               transition={{ delay: 0.3, duration: 0.5 }}
               className="starburst inline-block py-2 px-4 mb-6 text-black"
             >
-              新登場!
+              NEW!
             </motion.div>
             
             <h1 className="heading-xl mb-4 text-[#0A0A0A] font-bold relative font-['Slackey']">
-              仲間を見つけよう！<span className="sound-effect">マンガバース</span>で！
+              Find Your Manga Crew in <span className="sound-effect">MangaVerse</span>!
             </h1>
             
             <div className="speech-bubble">
               <p className="body-lg text-[#333]">
-                あなたの好きなマンガについて語り合える！お気に入りのキャラ、忘れられないシーン、次の展開予想までみんなと共有しよう！
+                Talk about your favorite manga with fellow fans! Share your thoughts on beloved characters, unforgettable scenes, and predictions for upcoming chapters!
               </p>
             </div>
           </motion.div>
@@ -47,11 +47,11 @@ const Hero = () => {
           >
             <Button className="manga-button bg-[#FF3860] hover:bg-[#FF3860] text-black border-black">
               <Sparkles className="w-5 h-5 mr-2 text-black" />
-              今すぐ始める!
+              Start Now!
             </Button>
             <Button variant="outline" className="manga-button bg-[#FFD700] hover:bg-[#FFD700] text-black border-black">
               <Zap className="w-5 h-5 mr-2 text-black" />
-              デモを見る
+              See Demo
             </Button>
           </motion.div>
           
@@ -71,14 +71,14 @@ const Hero = () => {
                   transition={{ delay: 0.2 * i, duration: 0.3 }}
                 >
                   <img 
-                    src={`https://api.dicebear.com/7.x/avataaars/svg?seed=manga${i}`} 
+                    src={`https://api.dicebear.com/7.x/pixel-art/svg?seed=manga${i}`} 
                     alt="avatar" 
                     className="w-full h-full object-cover"
                   />
                 </motion.div>
               ))}
             </div>
-            <p className="text-sm">既に <span className="font-bold text-[#FF3860]">1万人以上</span> のマンガファンが参加中!</p>
+            <p className="text-sm">Already <span className="font-bold text-[#FF3860]">10,000+</span> manga fans have joined!</p>
           </motion.div>
         </div>
         
@@ -100,18 +100,18 @@ const Hero = () => {
             <div className="flex items-center gap-3 mb-4">
               <div className="w-10 h-10 rounded-full overflow-hidden border-2 border-black">
                 <img 
-                  src="https://api.dicebear.com/7.x/avataaars/svg?seed=Tanjiro" 
+                  src="https://api.dicebear.com/7.x/pixel-art/svg?seed=Tanjiro" 
                   alt="avatar" 
                   className="w-full h-full object-cover"
                 />
               </div>
               <div>
-                <p className="font-bold text-sm">田中ヒロシ</p>
-                <p className="text-xs text-[#555]">たった今</p>
+                <p className="font-bold text-sm">MangaFan42</p>
+                <p className="text-xs text-[#555]">Just now</p>
               </div>
             </div>
             
-            <p className="text-sm mb-4 font-medium">ワンピース最新刊読んだ！ルフィの新技が凄すぎる！みんなも読んだ？感想聞かせて！😲🏴‍☠️</p>
+            <p className="text-sm mb-4 font-medium">Just read the latest One Piece chapter! Luffy's new technique is insane! What did you all think? 😲🏴‍☠️</p>
             
             <div className="manga-panel-small overflow-hidden mb-4 h-40 flex items-center justify-center bg-[#F0F8FF]">
               <img 
@@ -148,7 +148,7 @@ const Hero = () => {
                     <Sparkles size={14} className="text-white" />
                   </motion.div>
                 </div>
-                <span>28 コメント</span>
+                <span>28 comments</span>
               </div>
             </div>
           </motion.div>
@@ -160,7 +160,7 @@ const Hero = () => {
             transition={{ delay: 0.8, duration: 0.5 }}
           >
             <div className="sound-effect whitespace-nowrap">
-              スゴイ!
+              AWESOME!
             </div>
           </motion.div>
         </motion.div>
