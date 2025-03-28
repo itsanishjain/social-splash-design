@@ -28,15 +28,21 @@ const PostCard: React.FC<PostCardProps> = ({ post }) => {
 
   return (
     <motion.div
-      className="action-panel rounded-lg overflow-hidden"
+      className="action-panel rounded-lg overflow-hidden bg-white dark:bg-gray-900 border-4 border-black dark:border-gray-700"
       whileHover={{ y: -5 }}
       onHoverStart={() => setIsHovered(true)}
       onHoverEnd={() => setIsHovered(false)}
       initial={{ opacity: 0, y: 20 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.3 }}
+      style={{ 
+        boxShadow: "8px 8px 0px #000000",
+      }}
     >
-      <CardContent className="p-4 relative">
+      <CardContent className="p-4 relative bg-gradient-to-br from-white to-gray-50 dark:from-gray-800 dark:to-gray-900">
+        {/* Colorful accent strip at the top */}
+        <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-[#FF4F79] via-[#FFE66D] to-[#4FC4FF]"></div>
+        
         {/* Manga corner fold effect */}
         <div className="absolute top-0 right-0 w-0 h-0 border-t-[30px] border-r-[30px] border-t-[#FFE66D] border-r-transparent z-10"></div>
 
@@ -58,7 +64,7 @@ const PostCard: React.FC<PostCardProps> = ({ post }) => {
               whileHover={{ scale: 1.1 }}
               transition={{ type: "spring", stiffness: 400, damping: 10 }}
             >
-              <Avatar className="h-12 w-12 ring-4 ring-black">
+              <Avatar className="h-12 w-12 ring-4 ring-black dark:ring-gray-600 shadow-lg">
                 <AvatarImage
                   src={post.user.avatar}
                   alt={post.user.name}
@@ -72,9 +78,9 @@ const PostCard: React.FC<PostCardProps> = ({ post }) => {
           </Link>
 
           <div className="flex-1">
-            <div className="flex items-center gap-1 mb-1">
+            <div className="flex flex-wrap items-center gap-1 mb-1">
               <Link to={`/profile/${post.user.id}`} className="hover:underline">
-                <span className="font-bold font-manga-accent">
+                <span className="font-bold font-manga-accent text-black dark:text-white">
                   {post.user.name}
                 </span>
               </Link>
@@ -100,7 +106,7 @@ const PostCard: React.FC<PostCardProps> = ({ post }) => {
               </span>
             </div>
 
-            <div className="thought-bubble my-3 font-manga-body text-sm">
+            <div className="rounded-lg bg-[#F9F9F9] dark:bg-gray-800 p-3 my-3 font-manga-body text-sm border-2 border-black dark:border-gray-600 shadow-[3px_3px_0px_#000] dark:shadow-[3px_3px_0px_#333]">
               {post.content}
             </div>
 
@@ -113,12 +119,15 @@ const PostCard: React.FC<PostCardProps> = ({ post }) => {
                 {post.images.map((image, index) => (
                   <motion.div
                     key={index}
-                    className="manga-panel-torn overflow-hidden"
+                    className="overflow-hidden border-4 border-black dark:border-gray-700"
                     whileHover={{
                       scale: 1.03,
                       rotate: index % 2 === 0 ? 1 : -1,
                     }}
                     transition={{ duration: 0.2 }}
+                    style={{
+                      boxShadow: "5px 5px 0px #000000",
+                    }}
                   >
                     <img
                       src={image}
@@ -134,13 +143,13 @@ const PostCard: React.FC<PostCardProps> = ({ post }) => {
       </CardContent>
 
       <CardFooter className="p-0">
-        <div className="w-full flex justify-between items-center p-3 border-t-4 border-black bg-gradient-to-r from-[#FFE66D]/10 via-[#FF4F79]/10 to-[#4FC4FF]/10">
+        <div className="w-full flex justify-between items-center p-3 border-t-4 border-black dark:border-gray-700 bg-gradient-to-r from-[#FFE66D]/20 via-[#FF4F79]/20 to-[#4FC4FF]/20 dark:from-[#FFE66D]/10 dark:via-[#FF4F79]/10 dark:to-[#4FC4FF]/10">
           <motion.button
             className="flex items-center gap-1 text-[#4FC4FF] hover:text-[#0077A0] transition-colors"
             whileHover={{ scale: 1.1 }}
             whileTap={{ scale: 0.9 }}
           >
-            <div className="bg-white rounded-full p-1 border-2 border-black shadow-[2px_2px_0px_#000]">
+            <div className="bg-white rounded-full p-1 border-2 border-black shadow-[2px_2px_0px_#000] dark:bg-gray-800 dark:border-gray-600 dark:shadow-[2px_2px_0px_#333]">
               <MessageSquare size={18} />
             </div>
             <span className="text-xs font-bold font-manga-accent">
@@ -153,7 +162,7 @@ const PostCard: React.FC<PostCardProps> = ({ post }) => {
             whileHover={{ scale: 1.1 }}
             whileTap={{ scale: 0.9 }}
           >
-            <div className="bg-white rounded-full p-1 border-2 border-black shadow-[2px_2px_0px_#000]">
+            <div className="bg-white rounded-full p-1 border-2 border-black shadow-[2px_2px_0px_#000] dark:bg-gray-800 dark:border-gray-600 dark:shadow-[2px_2px_0px_#333]">
               <Repeat2 size={18} />
             </div>
             <span className="text-xs font-bold font-manga-accent">
@@ -179,7 +188,7 @@ const PostCard: React.FC<PostCardProps> = ({ post }) => {
                   <motion.div
                     whileTap={{ scale: 1.4 }}
                     transition={{ type: "spring", stiffness: 400, damping: 17 }}
-                    className="bg-white rounded-full p-1 border-2 border-black shadow-[2px_2px_0px_#000]"
+                    className="bg-white rounded-full p-1 border-2 border-black shadow-[2px_2px_0px_#000] dark:bg-gray-800 dark:border-gray-600 dark:shadow-[2px_2px_0px_#333]"
                   >
                     <Heart size={18} fill="currentColor" />
                   </motion.div>
@@ -195,7 +204,7 @@ const PostCard: React.FC<PostCardProps> = ({ post }) => {
                   exit={{ scale: 0.5 }}
                   className="flex items-center gap-1 text-[#FF4F79] hover:text-[#CC2D4C]"
                 >
-                  <div className="bg-white rounded-full p-1 border-2 border-black shadow-[2px_2px_0px_#000]">
+                  <div className="bg-white rounded-full p-1 border-2 border-black shadow-[2px_2px_0px_#000] dark:bg-gray-800 dark:border-gray-600 dark:shadow-[2px_2px_0px_#333]">
                     <Heart size={18} />
                   </div>
                   <span className="text-xs font-bold font-manga-accent">
@@ -224,7 +233,7 @@ const PostCard: React.FC<PostCardProps> = ({ post }) => {
                   <motion.div
                     whileTap={{ scale: 1.2 }}
                     transition={{ type: "spring", stiffness: 400, damping: 17 }}
-                    className="bg-white rounded-full p-1 border-2 border-black shadow-[2px_2px_0px_#000]"
+                    className="bg-white rounded-full p-1 border-2 border-black shadow-[2px_2px_0px_#000] dark:bg-gray-800 dark:border-gray-600 dark:shadow-[2px_2px_0px_#333]"
                   >
                     <Star size={18} fill="currentColor" />
                   </motion.div>
@@ -237,7 +246,7 @@ const PostCard: React.FC<PostCardProps> = ({ post }) => {
                   exit={{ y: -5, opacity: 0 }}
                   className="text-[#FFE66D] hover:text-[#E0BC00]"
                 >
-                  <div className="bg-white rounded-full p-1 border-2 border-black shadow-[2px_2px_0px_#000]">
+                  <div className="bg-white rounded-full p-1 border-2 border-black shadow-[2px_2px_0px_#000] dark:bg-gray-800 dark:border-gray-600 dark:shadow-[2px_2px_0px_#333]">
                     <Star size={18} />
                   </div>
                 </motion.div>
@@ -250,7 +259,7 @@ const PostCard: React.FC<PostCardProps> = ({ post }) => {
             whileHover={{ scale: 1.1 }}
             whileTap={{ scale: 0.9 }}
           >
-            <div className="bg-white rounded-full p-1 border-2 border-black shadow-[2px_2px_0px_#000]">
+            <div className="bg-white rounded-full p-1 border-2 border-black shadow-[2px_2px_0px_#000] dark:bg-gray-800 dark:border-gray-600 dark:shadow-[2px_2px_0px_#333]">
               <Share size={18} />
             </div>
           </motion.button>
