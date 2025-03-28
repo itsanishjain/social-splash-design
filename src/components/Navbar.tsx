@@ -7,12 +7,11 @@ const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = React.useState(false);
 
   return (
-    <header className="fixed top-0 z-50 w-full bg-background/90 backdrop-blur-sm border-b border-border/50">
-      <div className="container flex h-16 md:h-20 items-center justify-between">
+    <header className="sticky top-0 z-50 w-full bg-background/80 backdrop-blur-sm border-b">
+      <div className="container flex h-16 items-center justify-between">
         <div className="flex items-center gap-2">
-          <span className="text-xl font-serif font-bold text-foreground">
-            Connectify
-          </span>
+          <div className="h-8 w-8 rounded-full gradient-bg"></div>
+          <span className="text-xl font-bold">Connectify</span>
         </div>
         
         {/* Desktop Navigation */}
@@ -43,7 +42,7 @@ const Navbar = () => {
       
       {/* Mobile Navigation */}
       {isMenuOpen && (
-        <div className="md:hidden container py-4 pb-6 animate-fade-in bg-background mt-2 border border-border/50 rounded-lg">
+        <div className="md:hidden container py-4 pb-6 animate-fade-in">
           <nav className="flex flex-col gap-4">
             <a 
               href="#features" 

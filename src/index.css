@@ -5,36 +5,74 @@
 
 @layer base {
   :root {
-    /* Light theme */
-    --background: 30 30% 96%;
-    --foreground: 20 10% 15%;
-    
+    --background: 260 100% 99%;
+    --foreground: 260 25% 11%;
+
     --card: 0 0% 100%;
-    --card-foreground: 20 10% 15%;
-    
+    --card-foreground: 260 25% 11%;
+
     --popover: 0 0% 100%;
-    --popover-foreground: 20 10% 15%;
-    
-    --primary: 220 90% 56%;
+    --popover-foreground: 260 25% 11%;
+
+    --primary: 260 84% 63%;
     --primary-foreground: 0 0% 100%;
-    
-    --secondary: 30 20% 94%;
-    --secondary-foreground: 20 10% 15%;
-    
-    --muted: 30 10% 92%;
-    --muted-foreground: 20 10% 40%;
-    
-    --accent: 340 90% 65%;
-    --accent-foreground: 0 0% 100%;
-    
-    --destructive: 0 62.8% 30.6%;
-    --destructive-foreground: 0 0% 98%;
-    
-    --border: 20 10% 85%;
-    --input: 20 10% 85%;
-    --ring: 220 90% 56%;
+
+    --secondary: 260 25% 95%;
+    --secondary-foreground: 260 25% 11%;
+
+    --muted: 260 25% 95%;
+    --muted-foreground: 260 25% 40%;
+
+    --accent: 260 84% 95%;
+    --accent-foreground: 260 84% 40%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 260 25% 90%;
+    --input: 260 25% 90%;
+    --ring: 260 84% 63%;
 
     --radius: 0.75rem;
+
+    --sidebar-background: 0 0% 98%;
+    --sidebar-foreground: 240 5.3% 26.1%;
+    --sidebar-primary: 240 5.9% 10%;
+    --sidebar-primary-foreground: 0 0% 98%;
+    --sidebar-accent: 240 4.8% 95.9%;
+    --sidebar-accent-foreground: 240 5.9% 10%;
+    --sidebar-border: 220 13% 91%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+
+  .dark {
+    --background: 260 25% 11%;
+    --foreground: 260 25% 95%;
+
+    --card: 260 25% 13%;
+    --card-foreground: 260 25% 95%;
+
+    --popover: 260 25% 13%;
+    --popover-foreground: 260 25% 95%;
+
+    --primary: 260 84% 63%;
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 260 25% 20%;
+    --secondary-foreground: 260 25% 95%;
+
+    --muted: 260 25% 20%;
+    --muted-foreground: 260 25% 70%;
+
+    --accent: 260 84% 20%;
+    --accent-foreground: 260 84% 90%;
+
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 260 25% 20%;
+    --input: 260 25% 20%;
+    --ring: 260 84% 63%;
   }
 }
 
@@ -52,88 +90,43 @@
   }
 }
 
-/* Typography Classes */
+.gradient-text {
+  @apply bg-clip-text text-transparent bg-gradient-to-r from-violet-500 via-pink-500 to-blue-500 font-serif;
+}
+
+.gradient-bg {
+  @apply bg-gradient-to-r from-violet-500 via-pink-500 to-blue-500;
+}
+
+.glass-card {
+  @apply bg-white/90 backdrop-blur-sm border border-white/40 shadow-lg;
+}
+
+.animate-initial {
+  opacity: 0;
+}
+
+/* Additional Typography Classes */
 .heading-xl {
-  @apply font-serif text-4xl md:text-5xl lg:text-6xl font-bold leading-tight tracking-tight text-foreground;
+  @apply font-serif text-4xl md:text-5xl lg:text-6xl font-bold leading-tight tracking-tight;
 }
 
 .heading-lg {
-  @apply font-serif text-3xl md:text-4xl font-bold text-foreground;
+  @apply font-serif text-3xl md:text-4xl font-bold;
 }
 
 .heading-md {
-  @apply font-serif text-2xl md:text-3xl font-bold text-foreground;
+  @apply font-serif text-2xl md:text-3xl font-bold;
 }
 
 .body-lg {
-  @apply font-sans text-lg md:text-xl text-muted-foreground;
+  @apply font-sans text-lg md:text-xl;
 }
 
 .body-md {
-  @apply font-sans text-base text-muted-foreground;
+  @apply font-sans text-base;
 }
 
 .body-sm {
-  @apply font-sans text-sm text-muted-foreground;
-}
-
-/* Component Styles */
-.illustrated-card {
-  @apply rounded-3xl overflow-hidden bg-secondary/50 p-8 relative;
-}
-
-.illustrated-card img {
-  @apply object-contain;
-}
-
-.accent-bubble {
-  @apply absolute rounded-full;
-  background-color: rgba(var(--color-value, 255, 107, 107), 0.1);
-}
-
-.cta-button {
-  @apply bg-primary text-primary-foreground font-medium py-3 px-6 rounded-full transition-all hover:shadow-lg hover:scale-105;
-}
-
-.secondary-button {
-  @apply bg-secondary text-foreground font-medium py-3 px-6 rounded-full border border-foreground/10 transition-all hover:shadow-md;
-}
-
-.section-container {
-  @apply max-w-7xl mx-auto px-4 py-20 md:py-28;
-}
-
-/* Geometric shapes */
-.shape {
-  position: absolute;
-  opacity: 0.6;
-  z-index: 0;
-}
-
-.shape.triangle {
-  clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
-}
-
-.shape.circle {
-  border-radius: 50%;
-}
-
-.shape.square {
-  transform: rotate(45deg);
-}
-
-@keyframes float {
-  0% {
-    transform: translateY(0px);
-  }
-  50% {
-    transform: translateY(-10px);
-  }
-  100% {
-    transform: translateY(0px);
-  }
-}
-
-.floating {
-  animation: float 6s ease-in-out infinite;
+  @apply font-sans text-sm;
 }
