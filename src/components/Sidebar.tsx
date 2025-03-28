@@ -50,7 +50,7 @@ const Sidebar: React.FC = () => {
                       className={`w-full justify-start text-base font-medium ${
                         isActive 
                           ? 'bg-[#FF3860] text-white border-2 border-black' 
-                          : 'text-black hover:bg-gray-100'
+                          : 'text-black hover:text-black'
                       }`}
                     >
                       <item.icon className="mr-4" size={20} />
