@@ -238,6 +238,14 @@ const Footer = () => {
             >
               X Profile
             </a>
+            <a
+              href="https://github.com/itsanishjain"
+              className="text-sm text-[#555] hover:text-[#4FC4FF] font-semibold transition-colors"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              GitHub
+            </a>
           </div>
         </div>
       </div>
