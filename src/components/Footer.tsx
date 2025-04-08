@@ -230,6 +230,14 @@ const Footer = () => {
             >
               Cookies
             </a>
+            <a
+              href="https://x.com/attaboiaj"
+              className="text-sm text-[#555] hover:text-[#FF4F79] font-semibold transition-colors"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              X Profile
+            </a>
           </div>
         </div>
       </div>
