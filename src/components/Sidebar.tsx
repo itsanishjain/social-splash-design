@@ -1,4 +1,3 @@
-
 import React from "react";
 import { Link, useLocation } from "react-router-dom";
 import {
@@ -35,7 +34,9 @@ const Sidebar: React.FC = () => {
     <div className="w-64 h-screen sticky top-0 border-r border-border dark:border-gray-700 hidden md:flex flex-col justify-between p-4 dark:bg-gray-900 transition-colors duration-200">
       <div>
         <div className="text-2xl font-bold mb-8 px-4">
-          <span className="gradient-text dark:text-white">MangaVerse</span>
+          <Link to="/">
+            <span className="gradient-text dark:text-white">MangaVerse</span>
+          </Link>
         </div>
 
         <nav>
@@ -53,7 +54,7 @@ const Sidebar: React.FC = () => {
                           ? `bg-[${themeColor}] text-white border-2 border-black dark:border-gray-600`
                           : "text-black dark:text-white hover:text-black dark:hover:text-white"
                       }`}
-                      style={{ backgroundColor: isActive ? themeColor : '' }}
+                      style={{ backgroundColor: isActive ? themeColor : "" }}
                     >
                       <item.icon className="mr-4" size={20} />
                       {item.label}

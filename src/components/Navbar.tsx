@@ -19,7 +19,9 @@ const Navbar = () => {
           <div className="h-10 w-10 rounded-full bg-[#FF3860] border-2 border-black flex items-center justify-center">
             <span className="text-white font-bold text-xl">M</span>
           </div>
-          <span className="text-xl font-bold font-['Slackey']">MangaVerse</span>
+          <Link to="/" className="text-xl font-bold font-['Slackey']">
+            MangaVerse
+          </Link>
         </motion.div>
 
         {/* Desktop Navigation */}
